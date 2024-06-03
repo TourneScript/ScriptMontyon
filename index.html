@@ -16,15 +16,30 @@
             padding: 60px 0;
         }
         #logo {
-            height: 38px; /* Taille du logo */
+            height: 32.3px; /* Réduire la taille du logo de 15% */
+            margin-right: 10px; /* Réduire la marge droite du logo */
         }
         .navbar {
             background-color: #1C2842; /* Couleur du bandeau */
             padding-top: 10px; /* Ajustement de la hauteur du bandeau */
             padding-bottom: 10px; /* Ajustement de la hauteur du bandeau */
+            position: relative; /* Permettre le positionnement de la barre blanche */
+        }
+        .navbar-nav {
+            flex: 1;
+            justify-content: space-around; /* Étalement des titres */
         }
         .navbar-nav .nav-link {
             color: #ffffff !important; /* Couleur du texte dans le bandeau en blanc */
+        }
+        .navbar:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #ffffff; /* Barre blanche perpendiculaire */
         }
     </style>
 </head>
@@ -32,8 +47,9 @@
 
     <!-- Ruban -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
-        <a class="navbar-brand" href="#">
-            <img id="logo" src="Images/logo_montyon_blanc.png" alt="Logo officiel Montyon blanc" class="d-inline-block align-top">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img id="logo" src="Images/Logo officiel Montyon blanc.png" alt="Logo officiel Montyon blanc" class="d-inline-block align-top">
+            <span>Montyon Capital</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
