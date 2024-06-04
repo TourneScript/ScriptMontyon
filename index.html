@@ -109,15 +109,11 @@
             color: #1C2842;
             order: 2; /* Assurer que le texte soit à droite */
         }
-        .expertise-section .image {
-            width: 50%;
-            height: 100%;
-            order: 1; /* Assurer que l'image soit à gauche */
-        }
-        .expertise-section img {
+        .expertise-section .image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center left; /* Centre l'image sur la gauche */
         }
         .these-section {
             padding: 60px 0;
@@ -218,7 +214,7 @@
                 </ul>
             </p>
         </div>
-    </section>
+    </section>    
      
     <!-- Section Thèse -->
     <section id="these" class="these-section">
