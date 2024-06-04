@@ -110,10 +110,19 @@
             order: 2; /* Assurer que le texte soit à droite */
         }
         .expertise-section .image img {
-            height: 100%;
-            object-fit: cover;
-            object-position: center left; /* Centre l'image sur la gauche */
+        max-width: 100%;
+        height: auto; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background-attachment: fixed;
         }
+        .expertise-section {
+            background-color: #f0f0f0;
+        }
+
         .these-section {
             position: relative;
             display: flex;
