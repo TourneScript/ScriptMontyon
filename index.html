@@ -114,15 +114,35 @@
             height: 100%;
             order: 1; /* Assurer que l'image soit à gauche */
         }
-        .expertise-section h2 {
+        .expertise-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .these-section {
+            padding: 60px 0;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+            background-color: #fff; /* Optionally, set a background color */
+        }
+        .these-section .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             color: #1C2842;
         }
-        .expertise-section p {
+        .these-section h2 {
             color: #1C2842;
         }
-        .expertise-section strong {
+        .these-section p {
+            color: #1C2842;
+        }
+        .these-section strong {
             font-weight: bold;
         }
+        .these-section em {
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
@@ -172,8 +192,10 @@
     </section>
 
     <!-- Section Expertise -->
-    <div class="expertise-section">
-        <div class="image" style="background: url('Images/pipes.jpg') no-repeat center center/cover;"></div>
+    <section id="expertise" class="expertise-section">
+        <div class="image">
+            <img src="Images/pipes.jpg" alt="Pipes">
+        </div>
         <div class="content">
             <h2>Notre expertise</h2>
             <p>
@@ -196,12 +218,26 @@
                 </ul>
             </p>
         </div>
-    </div>    
-
+    </section>
+     
     <!-- Section Thèse -->
-    <section id="these" class="container mt-5">
-        <h2>Thèse</h2>
-        <p>Notre thèse d'investissement repose sur...</p>
+    <section id="these" class="these-section">
+        <div class="content">
+            <h2>Thèse</h2>
+            <p>
+                <strong>Taille des tickets :</strong> 10 – 50m€<br><br>
+                <strong>Géographie :</strong> 70% France – 30% Europe<br><br>
+                <strong>Segments :</strong> Restructuring, LBO, Buy&Build, Carve Out<br><br>
+                <strong>Segments délaissés par le marché ciblés par Montyon :</strong>
+                <ul>
+                    <li><em>Secteurs sous valorisés :</em> Secteurs perçus par le marché comme peu attirants avec une décorrélation valo/prix mais capables de générer de solides cash flows</li>
+                    <li><em>Cessions d’actifs non-stratégiques ou non-ESG à prix cassés par les grands groupes :</em> Stratégie de les rendre à terme ESG à terme (ou dans le cas inverse, OBO et/ou liquidation avec TV nulle)</li>
+                    <li><em>Actifs en difficulté conjoncturelle, aux stratégies défaillantes, surendettés</em></li>
+                    <li><em>Sortie d’actionnaires toxiques :</em> opportunités démultipliées par les tensions géopolitiques</li>
+                    <li>Deals à horizon de sortie avant : Deals à forte maturité, visibilité sur la sortie (offres d’achat, IPO à venir, etc.)</li>
+                </ul>
+            </p>
+        </div>
     </section>
 
     <!-- Section Équipe -->
