@@ -58,7 +58,33 @@
             font-style: italic;
             font-size: 1.5em;
         }
-    </style>       
+        .raison-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa; /* Couleur de fond pour la partie gauche */
+            padding: 40px;
+        }
+        .raison-section .content {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            padding: 30px; /* Augmenter la marge blanche autour du texte de 50% (20px * 1.5) */
+            color: #1C2842;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: 15%; /* Décalage du bloc de texte vers la droite de 15% */
+        }
+        .raison-section .background-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 75%;
+            background: url('Images/disqueuse.jpeg') no-repeat center center/cover;
+            z-index: 1;
+        }
+    </style>    
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
@@ -80,20 +106,27 @@
         </div>
     </nav>
 
-    <!-- Nouveau Bloc -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="content">
-            <img src="Images/logo_montyon_short.png" alt="Logo Montyon">
+            <img src="Images/logo_short_blanc.png" alt="Logo Montyon">
             <p>Un véhicule agile dédié aux opportunités non-vanilles</p>
         </div>
     </section>
 
-    <!-- Blocs existants -->
-    <section id="raison" class="container mt-5">
-        <h2>Raison d'être</h2>
-        <p>Notre mission est de fournir des solutions d'investissement innovantes...</p>
+    <!-- Section Raison d'être -->
+    <section id="raison" class="raison-section">
+        <div class="content">
+            <h2>Montyon : un véhicule agile dédié aux projets industriels non-conventionnels à forte rentabilité</h2>
+            <p>
+                « L’industrie est à l’aube de profondes transformations, sur lesquelles de nombreux fonds se positionnent, de l’amorçage au LBO. Mais les acteurs traditionnels sont contraints par la réglementation et leur stratégie. Ils se concentrent donc sur les deals « vanille », laissant de côté de nombreux segments qui qui sont ainsi peu ou pas financés.<br><br>
+                Grâce à sa structure juridique flexible et agile, Montyon apporte des réponses fortement créatrices de valeur à ces problématiques. »
+            </p>
+        </div>
+        <div class="background-image"></div>
     </section>
 
+    <!-- Blocs existants -->
     <section id="these" class="container mt-5">
         <h2>Thèse</h2>
         <p>Notre thèse d'investissement repose sur...</p>
