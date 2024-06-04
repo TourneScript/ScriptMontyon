@@ -208,6 +208,36 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        #portefeuille {
+            padding: 20px;
+        }
+
+        .portefeuille-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative; /* For positioning the image */
+        }
+
+        .portefeuille-item h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .portefeuille-item p {
+            margin-bottom: 5px;
+        }
+
+        .portefeuille-image {
+            width: 100%; /* Make the image span the full width of the item */
+            height: 200px; /* Adjust the height as needed */
+            position: absolute; /* Position the image at the bottom */
+            bottom: 0;
+            left: 0;
+            object-fit: cover; /* Ensure the image covers the entire area */
+        }
+
     </style>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
@@ -346,7 +376,30 @@
     <section id="portefeuille" class="container mt-5">
         <h2>Portefeuille</h2>
         <p>Notre portefeuille comprend...</p>
-    </section>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <div class="portefeuille-item">
+              <h3>Nom</h3>
+              <p>Secteur</p>
+              <p>Pays</p>
+              <p>CA cumulé</p>
+              <p>Actionnel</p>
+              <img src="Images/log.jpeg" alt="Image du projet" class="portefeuille-image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="portefeuille-item">
+              <h3>Nom</h3>
+              <p>Secteur</p>
+              <p>Pays</p>
+              <p>CA cumulé</p>
+              <p>Actionnel</p>
+              <img src="Images/automotive.jpeg" alt="Image du projet" class="portefeuille-image">
+            </div>
+          </div>
+        </div>
+      </section>      
 
     <!-- Section Contact -->
     <section id="contact" class="container mt-5">
