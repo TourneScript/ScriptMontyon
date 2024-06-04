@@ -160,6 +160,39 @@
         .these-section em {
             font-style: italic;
         }
+        .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the team members horizontally */
+}
+
+.team-member {
+  flex: 0 0 33.3%; /* Occupy 1/3 of the width */
+  margin: 10px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Create circular images */
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  margin-bottom: 10px;
+}
+
+.team-member .linkedin-link {
+  color: #007bff; /* LinkedIn blue color */
+  text-decoration: none;
+  font-weight: bold;
+}
 
     </style>
 </head>
@@ -260,21 +293,40 @@
     <!-- Section Équipe -->
     <section id="equipe" class="container mt-5">
         <h2>Équipe</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="Images/photo1.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-                <p>Nom du Membre 1</p>
-            </div>
-            <div class="col-md-4">
-                <img src="Images/photo2.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-                <p>Nom du Membre 2</p>
-            </div>
-            <div class="col-md-4">
-                <img src="Images/photo3.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-                <p>Nom du Membre 3</p>
-            </div>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="Images/PL.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+            <h3>Pascal Lebard</h3>
+            <p>Senior Partner & Co-Founder</p>
+            <a href="#" class="linkedin-link">https://www.linkedin.com/in/pascal-lebard-84489516/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bde10ReXVQz2VQ55%2FNPoPsQ%3D%3D</a>
+          </div>
+          <div class="team-member">
+            <img src="Images/image.png" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+            <h3>Pierre Ménard</h3>
+            <p>Partner & Co-Founder</p>
+            <a href="#" class="linkedin-link">https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BlIAhKabaTzyiCrGmIoBfmA%3D%3D</a>
+          </div>
+          <div class="team-member">
+            <img src="Images/ON.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+            <h3>Olivier Nantois</h3>
+            <p>Principal</p>
+            <a href="#" class="linkedin-link">https://www.linkedin.com/in/olivier-nantois-6448827b/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BscPq%2B3N0ReC4t9OZ8Mc5OA%3D%3D</a>
+          </div>
+          <div class="team-member">
+            <img src="Images/QH.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+            <h3>Quitterie Humblot</h3>
+            <p>Associate</p>
+            <a href="#" class="linkedin-link">https://www.linkedin.com/in/quitterie-humblot-6b9236129/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BvZl6pPnqStKVE67uscJKZQ%3D%3D</a>
+          </div>
+          <div class="team-member">
+            <img src="Images/odl.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+            <h3>Oscar de Laubier</h3>
+            <p>Analyst</p>
+            <a href="#" class="linkedin-link">https://www.linkedin.com/in/oscar-de-laubier/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BklwlF0naT9iTJxn1B9RjRA%3D%3D</a>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
     <!-- Section Portefeuille -->
     <section id="portefeuille" class="container mt-5">
