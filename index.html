@@ -110,21 +110,33 @@
             order: 2; /* Assurer que le texte soit à droite */
         }
         .expertise-section .image img {
-            width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center left; /* Centre l'image sur la gauche */
         }
         .these-section {
-            padding: 60px 0;
-            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
-            background-color: #fff; /* Optionally, set a background color */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            min-height: calc(100vh - 45px); /* Occupy full screen height minus the header */
+            background: url('Images/logistique.jpg') no-repeat center center/cover;
         }
         .these-section .content {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            padding: 30px;
+            color: #1C2842;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            color: #1C2842;
+            border-radius: 10px; /* Optional: Adds rounded corners to the white box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the white box */
+        }
+        .these-section ul {
+            padding-left: 20px; /* Indent the bullet points */
+            line-height: 1.8; /* Increase line height for better spacing */
         }
         .these-section h2 {
             color: #1C2842;
@@ -235,6 +247,7 @@
             </p>
         </div>
     </section>
+
 
     <!-- Section Équipe -->
     <section id="equipe" class="container mt-5">
