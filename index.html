@@ -35,6 +35,7 @@
             align-items: center;
             text-align: center;
             color: #fff;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
         }
         .hero-section .content {
             position: relative;
@@ -89,6 +90,125 @@
             display: flex;
             align-items: center;
             padding: 40px;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+        }
+        .expertise-section .content {
+            width: 50%;
+            padding: 20px;
+            color: #1C2842;
+        }
+        .expertise-section .image {
+            width: 50%;
+            background: url('Images/pipes.jpg') no-repeat center center/cover;
+            height: 100%;
+        }
+        .expertise-section h2 {
+            color: #1C2842;
+        }
+        .expertise-section p {
+            color: #1C2842;
+        }
+        .expertise-section strong {
+            font-weight: bold;
+        }
+    </style>    
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montyon Capital</title>
+    <!-- Inclusion de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Inclusion des styles CSS -->
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="70">
+    <style>
+        body {
+            position: relative;
+            padding-top: 45px; /* Hauteur du ruban fixe ajustée */
+            font-family: 'Helvetica', Arial, sans-serif; /* Texte en Helvetica */
+        }
+        section {
+            padding: 60px 0;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+        }
+        #logo {
+            height: 40px; /* Réduire la taille du logo */
+        }
+        .navbar {
+            background-color: #1C2842; /* Couleur du bandeau */
+            padding-top: 8px; /* Réduire la hauteur du bandeau de 20% */
+            padding-bottom: 8px; /* Réduire la hauteur du bandeau de 20% */
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* Couleur du texte dans le bandeau en blanc */
+        }
+        .hero-section {
+            position: relative;
+            background: url('Images/couverture_presentation.jpeg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+        }
+        .hero-section .content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Assombrit l'image pour un meilleur contraste du texte */
+            z-index: 1;
+        }
+        .hero-section img {
+            max-width: 150px; /* Ajustez la taille du logo */
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-style: italic;
+            font-size: 1.5em;
+        }
+        .raison-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #1C2842; /* Couleur de fond pour la partie gauche */
+            padding: 40px;
+        }
+        .raison-section .content {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            padding: 30px; /* Augmenter la marge blanche autour du texte de 50% (20px * 1.5) */
+            color: #1C2842;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: 15%; /* Décalage du bloc de texte vers la droite de 15% */
+        }
+        .raison-section .background-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 75%; /* Couvre les 3/4 de la largeur en partant de la droite */
+            height: 100%;
+            background: url('Images/disqueuse.jpg') no-repeat center center/cover;
+            z-index: 1;
+        }
+        .expertise-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
         }
         .expertise-section .content {
             width: 50%;
@@ -110,8 +230,6 @@
             font-weight: bold;
         }
     </style>
-</head>
-<body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">
@@ -145,7 +263,6 @@
         <div class="content">
             <h2>Montyon : un véhicule agile dédié aux projets industriels non-conventionnels à forte rentabilité</h2>
             <p>
-                <br><br>
                 L’industrie est à l’aube de profondes transformations, sur lesquelles de nombreux fonds se positionnent, de l’amorçage au LBO. Mais les acteurs traditionnels sont contraints par la réglementation et leur stratégie. Ils se concentrent donc sur les deals « vanille », laissant de côté de nombreux segments qui qui sont ainsi peu ou pas financés.<br><br>
                 Grâce à sa structure juridique flexible et agile, Montyon apporte des réponses fortement créatrices de valeur à ces problématiques.
                 <br><br>
