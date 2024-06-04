@@ -139,7 +139,7 @@
             background: #fff;
             padding: 30px;
             color: #1C2842;
-            max-width: 80px;
+            max-width: 800px;
             margin: 0 auto;
             border-radius: 10px; /* Optional: Adds rounded corners to the white box */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the white box */
@@ -163,20 +163,26 @@
         .team-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center the team members horizontally */
+            justify-content: center;
         }
 
         .team-member {
-            flex: 0 0 33.3%; /* Occupy 1/3 of the width */
+            flex: 0 0 33.33%; /* Occupy 1/3 of the width for first row */
             margin: 10px;
             text-align: center;
+            flex-grow: 0; /* Prevent vertical expansion */
         }
 
-        .team-member img {
-            width: 100%; /* Make images responsive */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Create circular images */
-            margin-bottom: 15px;
+        .image-container {
+            height: 150px; /* Adjust as needed for desired height */
+            overflow: hidden; /* Hide excess image if it doesn't fit */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block; /* Ensure the image fills the container */
+            margin: 0 auto; /* Center the image horizontally */
         }
 
         .team-member h3 {
@@ -297,31 +303,31 @@
             <img src="Images/PL.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Pascal Lebard</h3>
             <p>Senior Partner & Co-Founder</p>
-            <a href="#" class="linkedin-link">https://www.linkedin.com/in/pascal-lebard-84489516/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bde10ReXVQz2VQ55%2FNPoPsQ%3D%3D</a>
+            <a href="https://www.linkedin.com/in/pascal-lebard-84489516/" class="linkedin-link">LinkedIn</a>
           </div>
           <div class="team-member">
             <img src="Images/image.png" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Pierre Ménard</h3>
             <p>Partner & Co-Founder</p>
-            <a href="#" class="linkedin-link">https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BlIAhKabaTzyiCrGmIoBfmA%3D%3D</a>
+            <a href="https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/" class="linkedin-link">LinkedIn</a>
           </div>
           <div class="team-member">
             <img src="Images/ON.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Olivier Nantois</h3>
             <p>Principal</p>
-            <a href="#" class="linkedin-link">https://www.linkedin.com/in/olivier-nantois-6448827b/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BscPq%2B3N0ReC4t9OZ8Mc5OA%3D%3D</a>
+            <a href="https://www.linkedin.com/in/olivier-nantois-6448827b/" class="linkedin-link">LinkedIn</a>
           </div>
           <div class="team-member">
             <img src="Images/QH.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Quitterie Humblot</h3>
             <p>Associate</p>
-            <a href="#" class="linkedin-link">https://www.linkedin.com/in/quitterie-humblot-6b9236129/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BvZl6pPnqStKVE67uscJKZQ%3D%3D</a>
+            <a href="https://www.linkedin.com/in/quitterie-humblot-6b9236129/" class="linkedin-link">LinkedIn</a>
           </div>
           <div class="team-member">
             <img src="Images/odl.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Oscar de Laubier</h3>
             <p>Analyst</p>
-            <a href="#" class="linkedin-link">https://www.linkedin.com/in/oscar-de-laubier/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BklwlF0naT9iTJxn1B9RjRA%3D%3D</a>
+            <a href="https://www.linkedin.com/in/oscar-de-laubier/" class="linkedin-link">LinkedIn</a>
           </div>
         </div>
       </section>
