@@ -85,7 +85,31 @@
             background: url('Images/disqueuse.jpg') no-repeat center center/cover;
             z-index: 1;
         }
-    </style>    
+        .expertise-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+        }
+        .expertise-section .content {
+            width: 50%;
+            padding: 20px;
+            color: #1C2842;
+        }
+        .expertise-section .image {
+            width: 50%;
+            background: url('Images/pipes.jpg') no-repeat center center/cover;
+            height: 100%;
+        }
+        .expertise-section h2 {
+            color: #1C2842;
+        }
+        .expertise-section p {
+            color: #1C2842;
+        }
+        .expertise-section strong {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
@@ -99,6 +123,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#raison">Raison d'être</a></li>
+                <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
                 <li class="nav-item"><a class="nav-link" href="#these">Thèse</a></li>
                 <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portefeuille">Portefeuille</a></li>
@@ -120,11 +145,40 @@
         <div class="content">
             <h2>Montyon : un véhicule agile dédié aux projets industriels non-conventionnels à forte rentabilité</h2>
             <p>
-                « L’industrie est à l’aube de profondes transformations, sur lesquelles de nombreux fonds se positionnent, de l’amorçage au LBO. Mais les acteurs traditionnels sont contraints par la réglementation et leur stratégie. Ils se concentrent donc sur les deals « vanille », laissant de côté de nombreux segments qui qui sont ainsi peu ou pas financés.<br><br>
-                Grâce à sa structure juridique flexible et agile, Montyon apporte des réponses fortement créatrices de valeur à ces problématiques. »
+                <br><br>
+                L’industrie est à l’aube de profondes transformations, sur lesquelles de nombreux fonds se positionnent, de l’amorçage au LBO. Mais les acteurs traditionnels sont contraints par la réglementation et leur stratégie. Ils se concentrent donc sur les deals « vanille », laissant de côté de nombreux segments qui qui sont ainsi peu ou pas financés.<br><br>
+                Grâce à sa structure juridique flexible et agile, Montyon apporte des réponses fortement créatrices de valeur à ces problématiques.
+                <br><br>
             </p>
         </div>
         <div class="background-image"></div>
+    </section>
+
+    <!-- Section Expertise -->
+    <section id="expertise" class="expertise-section">
+        <div class="content">
+            <h2>Notre expertise</h2>
+            <p>
+                Montyon, du nom de l’économiste et philanthrope Antoine de Montyon (1733-1820), est soutenu par Otium Capital (1,6md€ AUM) qui a fait de l’industrie l’un des piliers de sa politique d’investissement au cours des dernières années et investit 150m€ dans ce projet.<br><br>
+                Montyon a 3 spécificités : <br><br>
+                <strong>Flexibilité</strong>
+                <ul>
+                    <li>Thèse d’investissement large et outils d’investissements les plus divers (dette, equity, preferred stocks, etc.)</li>
+                    <li>Sans contraintes la Société pourra se porter vers des deals délaissés par les fonds</li>
+                </ul>
+                <strong>Contrôle</strong>
+                <ul>
+                    <li>Grande simplicité de gestion et un Comité d’Investissement décisionnaire</li>
+                    <li>Investissement en majoritaire ou minoritaire avec des clauses protectrices</li>
+                </ul>
+                <strong>Efficacité</strong>
+                <ul>
+                    <li>Priorité mise sur la génération de cash flows</li>
+                    <li>Sélection des actifs avec visibilité forte sur une liquidité ou capables de générer la rentabilité via les dividendes</li>
+                </ul>
+            </p>
+        </div>
+        <div class="image"></div>
     </section>
 
     <!-- Section Thèse -->
