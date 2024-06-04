@@ -14,6 +14,7 @@
         }
         section {
             padding: 60px 0;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
         }
         #logo {
             height: 40px; /* Réduire la taille du logo */
@@ -29,7 +30,6 @@
         .hero-section {
             position: relative;
             background: url('Images/couverture_presentation.jpeg') no-repeat center center/cover;
-            height: 400px; /* Ajustez cette hauteur selon vos besoins */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -126,12 +126,13 @@
         <div class="background-image"></div>
     </section>
 
-    <!-- Blocs existants -->
+    <!-- Section Thèse -->
     <section id="these" class="container mt-5">
         <h2>Thèse</h2>
         <p>Notre thèse d'investissement repose sur...</p>
     </section>
 
+    <!-- Section Équipe -->
     <section id="equipe" class="container mt-5">
         <h2>Équipe</h2>
         <div class="row">
@@ -150,11 +151,13 @@
         </div>
     </section>
 
+    <!-- Section Portefeuille -->
     <section id="portefeuille" class="container mt-5">
         <h2>Portefeuille</h2>
         <p>Notre portefeuille comprend...</p>
     </section>
 
+    <!-- Section Contact -->
     <section id="contact" class="container mt-5">
         <h2>Contact</h2>
         <p>Pour nous contacter, veuillez...</p>
