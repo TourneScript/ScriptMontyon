@@ -282,6 +282,47 @@
     margin-left: 10px;
     font-size: 1.2em;
 }
+/* styles.css */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.btn-hover:hover {
+    background-color: #ff8c00;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #1C2842;
+}
+
+.section-break {
+    height: 50px;
+    background-color: #1C2842;
+}
 
     </style>
 </head>
@@ -318,6 +359,8 @@
         </div>
     </section>
 
+    <div class="section-break"></div>
+
     <!-- Section Raison d'être -->
     <section id="raison" class="raison-section fade-in">
         <div class="content">
@@ -330,6 +373,8 @@
         </div>
         <div class="background-image"></div>
     </section>
+
+    <div class="section-break"></div>
 
     <!-- Section Expertise -->
     <section id="expertise" class="expertise-section fade-in">
@@ -356,10 +401,12 @@
             </p>
         </div>
         <div class="background-image"></div>
-    </section>    
+    </section> 
+    
+    <div class="section-break"></div>
      
     <!-- Section Thèse -->
-    <section id="these" class="these-section fade-in parallax" style="background-image: url('Images/logistique.jpg');">
+    <section id="these" class="these-section parallax fade-in">
         <div class="content">
             <h2>Thèse</h2>
             <p>
@@ -378,6 +425,7 @@
         </div>
     </section>
 
+    <div class="section-break"></div>
 
     <!-- Section Équipe -->
     <section id="equipe" class="container mt-5">
@@ -417,6 +465,8 @@
       </section>
       
 
+      <div class="section-break"></div>
+
     <!-- Section Portefeuille -->
     <section id="portefeuille" class="container mt-5">
         <h2>Portefeuille</h2>
@@ -444,7 +494,8 @@
             </div>
           </div>
         </div>
-      </section>      
+      </section>  
+
 
     <!-- Section Contact -->
     <section id="contact" class="container mt-5"></section>
@@ -466,37 +517,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const faders = document.querySelectorAll('.fade-in');
-            const options = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -10px 0px"
-            };
-        
-            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
-                        entry.target.classList.add('show');
-                        appearOnScroll.unobserve(entry.target);
-                    }
-                });
-            }, options);
-        
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
-        
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+    const faders = document.querySelectorAll('.fade-in');
+    const options = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -10px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('show');
+                appearOnScroll.unobserve(entry.target);
+            }
         });
-        </script>        
+    }, options);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+</script>        
 </body>
 </html>
