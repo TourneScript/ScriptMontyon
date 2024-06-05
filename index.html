@@ -319,7 +319,7 @@
     </section>
 
     <!-- Section Raison d'être -->
-    <section id="raison" class="raison-section">
+    <section id="raison" class="raison-section fade-in">
         <div class="content">
             <h2>Montyon : un véhicule agile dédié aux projets industriels non-conventionnels à forte rentabilité</h2>
             <p>
@@ -332,7 +332,7 @@
     </section>
 
     <!-- Section Expertise -->
-    <section id="expertise" class="expertise-section">
+    <section id="expertise" class="expertise-section fade-in parallax" style="background-image: url('Images/pipes.jpg');">
         <div class="content">
             <h2>Notre expertise</h2>
             <p>
@@ -359,7 +359,7 @@
     </section>    
      
     <!-- Section Thèse -->
-    <section id="these" class="these-section">
+    <section id="these" class="these-section fade-in parallax" style="background-image: url('Images/logistique.jpg');">
         <div class="content">
             <h2>Thèse</h2>
             <p>
@@ -464,5 +464,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const faders = document.querySelectorAll('.fade-in');
+            const options = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -10px 0px"
+            };
+        
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('show');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, options);
+        
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+        </script>        
 </body>
 </html>
