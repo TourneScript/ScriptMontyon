@@ -63,7 +63,7 @@
             z-index: 1;
         }
         .hero-section img {
-            max-width: 180px; /* Ajustez la taille du logo */
+            max-width: 250px; /* Ajustez la taille du logo */
             margin-bottom: 20px;
         }
         .hero-section p {
@@ -241,6 +241,31 @@
             left: 0;
             object-fit: cover; /* Ensure the image covers the entire area */
         }
+        .footer {
+    background-color: #1C2842; /* Same blue as the navbar */
+    color: #ffffff;
+    font-family: 'Helvetica', sans-serif;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .contact-info {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
 
     </style>
 </head>
@@ -406,10 +431,16 @@
       </section>      
 
     <!-- Section Contact -->
-    <section id="contact" class="container mt-5">
-        <h2>Contact</h2>
-        <p>Pour nous contacter, veuillez...</p>
-    </section>
+    <!-- Section Contact -->
+    <footer class="footer">
+        <div class="contact-info">
+            <p>20 avenue 75116 Paris</p>
+            <p>Email: <a href="mailto:p.menard@montyon.com" style="color: #ffffff;">p.menard@montyon.com</a></p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/montyon-capital/"><img src="Images/linkedin.png" alt="LinkedIn" width="24" height="24"></a>
+        </div>
+    </footer>
 
     <!-- Inclusion de JavaScript pour Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
