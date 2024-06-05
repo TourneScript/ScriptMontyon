@@ -252,18 +252,36 @@
     width: 100%;
 }
 
-.footer .contact-info {
-    margin-bottom: 10px;
+.contact-section {
+    background-color: #1C2842; /* Same blue as the navbar */
+    color: #ffffff;
+    font-family: 'Helvetica', sans-serif;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer .social-icons {
-    margin-top: 10px;
+.contact-section .contact-info {
+    margin-left: 20px;
 }
 
-.footer .social-icons a {
+.contact-section .contact-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-section .social-icons {
+    margin-right: 20px;
+}
+
+.contact-section .social-icons a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 10px;
+    margin-left: 10px;
     font-size: 1.2em;
 }
 
@@ -391,7 +409,6 @@
             <p>Associate</p>
             <a href="https://www.linkedin.com/in/quitterie-humblot-6b9236129/"><img src="Images/linkedin.png" alt="LinkedIn" width="24" height="24"></a>
             </div>
-        </div>
           <div class="team-member">
             <img src="Images/ODL.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
             <h3>Oscar de Laubier</h3>
@@ -432,16 +449,16 @@
       </section>      
 
     <!-- Section Contact -->
-    <!-- Section Contact -->
-    <footer class="footer">
+    <div class="contact-section">
         <div class="contact-info">
-            <p>20 avenue Kleber, 75116 Paris</p>
-            <p>Email: <a href="mailto:contact@montyon.com" style="color: #ffffff;">p.menard@montyon.com</a></p>
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:p.menard@montyon.com" style="color: #ffffff;">p.menard@montyon.com</a></p>
+            <p>20 avenue 75116 Paris</p>
         </div>
         <div class="social-icons">
             <a href="https://www.linkedin.com/company/montyon-capital/"><img src="Images/linkedin.png" alt="LinkedIn" width="24" height="24"></a>
         </div>
-    </footer>
+    </div>
 
     <!-- Inclusion de JavaScript pour Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
