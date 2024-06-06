@@ -56,6 +56,8 @@
             text-align: center;
             color: #fff;
             min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+            opacity: 1; /* Ensure the hero section is always visible */
+            transform: none; /* Ensure no transform is applied */
         }
 
         .hero-section video {
@@ -297,6 +299,8 @@
             padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
             height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
             margin: 0; /* Supprime l'espace autour du bandeau bleu */
+            opacity: 1; /* Ensure the contact section is always visible */
+            transform: none; /* Ensure no transform is applied */
         }
 
         .contact-section .contact-info p {
@@ -357,7 +361,7 @@
             animation: slideInLeft 1.5s ease-in-out forwards;
         }
 
-        .these-section.visible, .contact-section.visible {
+        .these-section.visible {
             animation: fadeIn 1.5s ease-in-out forwards;
         }
 
@@ -568,44 +572,45 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Inclusion de JavaScript pour les animations -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Smooth scrolling for navbar links
-            const navbarLinks = document.querySelectorAll('.navbar-nav a');
-    
-            navbarLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-    
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 45, // Adjust for fixed navbar height
-                        behavior: 'smooth'
-                    });
+<!-- Inclusion de JavaScript pour les animations -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Smooth scrolling for navbar links
+        const navbarLinks = document.querySelectorAll('.navbar-nav a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 45, // Adjust for fixed navbar height
+                    behavior: 'smooth'
                 });
-            });
-    
-            // Intersection Observer for section animations
-            const sections = document.querySelectorAll("section:not(#equipe):not(#portefeuille), .contact-section");
-    
-            const observerOptions = {
-                threshold: 0.1
-            };
-    
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-    
-            sections.forEach(section => {
-                observer.observe(section);
             });
         });
-    </script>    
+
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille), .contact-section");
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>   
 
 </body>
 </html>
