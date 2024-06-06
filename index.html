@@ -292,19 +292,19 @@
     }
 
     /* === Contact Section Styles === */
-/* Section Contact container */
-    #contact {
-        padding: 0 !important; /* Supprimer le padding de la section contact */
-        margin: 0 !important; /* Supprimer la marge de la section contact */
-        height: 120px; /* Fixer la hauteur de la section */
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-        background: url('Images/conteneur.jpg') no-repeat center center; /* Ajouter l'image de fond */
-        background-size: cover; /* S'assurer que l'image couvre toute la section */
-        width: 100vw; /* Utiliser toute la largeur de la fenêtre */
+    .contact-section {
+        background-color: #1C2842; /* Même bleu que la navbar */
+        color: #ffffff;
+        font-family: 'Helvetica', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
+        height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
+        margin: 0; /* Supprime l'espace autour du bandeau bleu */
+        width: 100%; /* Utilise toute la largeur de la fenêtre */
         box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
     }
-
 
     /* Section Contact container */
     #contact {
@@ -313,9 +313,23 @@
         height: 120px; /* Fixer la hauteur de la section */
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
-        background: url('Images/conteneur.jpg') no-repeat center center/cover; /* Ajouter l'image de fond */
+        width: 100%; /* Utiliser toute la largeur de la fenêtre */
+        position: relative;
     }
 
+    /* Ajouter l'image de fond couvrant toute la largeur sous le bandeau de contact */
+    #contact::after {
+        content: "";
+        display: block;
+        background: url('Images/conteneur.jpg') no-repeat center center; /* Ajouter l'image de fond */
+        background-size: cover; /* S'assurer que l'image couvre toute la section */
+        width: 100vw; /* Utiliser toute la largeur de la fenêtre */
+        height: calc(100vh - 120px); /* Ajuster la hauteur pour couvrir le reste de la page */
+        position: absolute;
+        top: 120px; /* Placer l'image sous le bandeau de contact */
+        left: 0;
+        z-index: -1; /* S'assurer que l'image est en arrière-plan */
+    }
 
     /* Contact Info */
     .contact-section .contact-info p {
