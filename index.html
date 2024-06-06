@@ -288,6 +288,12 @@
     height: 30px;
     background-color: #1C2842;
 }
+/* Supprimer les animations de la hero section */
+.hero-section {
+    opacity: 1; /* Assurez-vous que la hero section est toujours visible */
+    transform: none; /* Réinitialiser les transformations */
+}
+
 /* Animation for fade-in effect */
 @keyframes fadeIn {
     from {
@@ -324,35 +330,35 @@
     }
 }
 
-/* Apply the animations to sections */
-
-section {
+/* Initial state */
+section, .team-container, .portefeuille-item, .contact-section {
     opacity: 0;
-    animation-fill-mode: forwards;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+/* Appliquer les animations une fois visible */
 .raison-section.visible {
-    animation: slideInRight 2.5s ease-in-out;
+    animation: slideInRight 2s ease-in-out forwards;
 }
 
 .expertise-section.visible {
-    animation: slideInLeft 2.5s ease-in-out;
+    animation: slideInLeft 2s ease-in-out forwards;
 }
 
 .these-section.visible {
-    animation: slideInRight 2.5s ease-in-out;
+    animation: slideInRight 2s ease-in-out forwards;
 }
 
 .team-container.visible {
-    animation: fadeIn 2.5s ease-in-out;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 .portefeuille-item.visible {
-    animation: slideInLeft 2.5s ease-in-out;
+    animation: slideInLeft 2s ease-in-out forwards;
 }
 
 .contact-section.visible {
-    animation: fadeIn 2.5s ease-in-out;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
     </style>
@@ -572,11 +578,10 @@ section {
                 threshold: 0.1
             };
     
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -585,7 +590,7 @@ section {
                 observer.observe(section);
             });
         });
-    </script>          
+    </script>    
 
 </body>
 </html>
