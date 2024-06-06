@@ -289,9 +289,6 @@
     background-color: #1C2842;
 }
 /* Animation for fade-in effect */
-
-/* Animation for fade-in effect */
-/* Animation for fade-in effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -328,13 +325,10 @@
 }
 
 /* Apply the animations to sections */
+
 section {
     opacity: 0;
     animation-fill-mode: forwards;
-}
-
-.hero-section {
-    animation: fadeIn 2.5s ease-in-out;
 }
 
 .raison-section {
@@ -360,7 +354,6 @@ section {
 .contact-section {
     animation: fadeIn 2.5s ease-in-out;
 }
-
 
     </style>
 </head>
@@ -575,20 +568,24 @@ section {
             // Intersection Observer for section animations
             const sections = document.querySelectorAll("section, .team-container, .portefeuille-item, .contact-section");
     
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+    
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
+                        entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
     
             sections.forEach(section => {
                 observer.observe(section);
             });
         });
-    </script>    
+    </script>       
 
 </body>
 </html>
