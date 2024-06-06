@@ -16,8 +16,10 @@
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            width: 100%;
+            overflow-x: hidden; /* Empêche le débordement horizontal */
         }
+
 
         body {
             background-color: #1C2842; /* Définit la couleur de fond bleue */
@@ -46,7 +48,7 @@
         /* === Navbar Styles === */
         .navbar {
             background-color: #1C2842; /* Couleur du bandeau */
-            padding: 8px 0; /* Réduire la hauteur du bandeau de 20% */
+            padding: 8px 20px; /* Réduire la hauteur du bandeau de 20% */
         }
 
         .navbar-nav .nav-link {
@@ -310,10 +312,10 @@
             padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
             height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
             margin: 0; /* Supprime l'espace autour du bandeau bleu */
-            position: relative;
-            top: 0; /* Assurez-vous que cette valeur est à 0 pour éviter les décalages */
             width: 100vw; /* Utilise toute la largeur de la fenêtre */
+            box-sizing: border-box; /* Assure que le padding ne dépasse pas la largeur */
         }
+
 
         /* Section Contact container */
         #contact {
