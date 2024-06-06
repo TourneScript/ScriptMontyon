@@ -287,6 +287,75 @@
 .section-break {
     height: 30px;
     background-color: #1C2842;
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for slide-in effect from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for slide-in effect from the left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animations to sections */
+section {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.hero-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.raison-section {
+    animation: slideInRight 1s ease-in-out;
+}
+
+.expertise-section {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.these-section {
+    animation: slideInRight 1s ease-in-out;
+}
+
+.team-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.portefeuille-item {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.contact-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
 }
 
     </style>
@@ -479,5 +548,26 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Inclusion de JavaScript pour les animations -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section, .team-container, .portefeuille-item, .contact-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
 </body>
 </html>
