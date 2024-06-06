@@ -178,7 +178,7 @@
         align-items: center;
         padding: 40px;
         min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
-        background: url('Images/logistique.jpg') no-repeat center center/cover;
+        background: url('Images/log.jpg') no-repeat center center/cover;
     }
 
     .these-section .content {
@@ -304,6 +304,7 @@
         width: 100vw; /* Utilise toute la largeur de la fenêtre */
         box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
         margin: 0 auto; /* Centrer le bandeau */
+        position: relative;
     }
 
     /* Section Contact container */
@@ -316,7 +317,7 @@
     }
 
     /* Ajouter l'image de fond couvrant toute la largeur sous le bandeau de contact */
-    #contact::after {
+    #contact::before {
         content: "";
         display: block;
         background: url('Images/conteneur.jpg') no-repeat center center; /* Ajouter l'image de fond */
@@ -342,6 +343,7 @@
         margin-left: 10px;
         font-size: 1.2em;
     }
+
     /* === Animations === */
     /* Animation for fade-in effect */
     @keyframes fadeIn {
@@ -398,6 +400,7 @@
         transform: none;
         transition: none;
     }
+
 
     </style>
 
