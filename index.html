@@ -375,7 +375,7 @@
         }
 
         /* Rendre les sections portefeuille et équipe visibles sans animations */
-        #equipe, #portefeuille {
+        #equipe, #portefeuille, #contact {
             opacity: 1;
             transform: none;
             transition: none;
@@ -601,7 +601,7 @@
         });
 
         // Intersection Observer for section animations
-        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille), .contact-section");
+        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
 
         const observerOptions = {
             threshold: 0.1
