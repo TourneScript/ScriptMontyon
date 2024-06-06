@@ -289,7 +289,7 @@
         background-color: #1C2842;
     }
 
-    /* Supprimer les animations de la hero section */
+        /* Supprimer les animations de la hero section */
     .hero-section {
         opacity: 1; /* Assurez-vous que la hero section est toujours visible */
         transform: none; /* Réinitialiser les transformations */
@@ -354,11 +354,13 @@
         animation: fadeIn 1.5s ease-in-out forwards;
     }
 
-    /* Supprimer les animations pour les sections portefeuille et équipe */
-    .portefeuille-item, .team-container {
-        opacity: 1; /* Rendre les sections visibles sans animations */
-        transform: none; /* Réinitialiser les transformations */
+    /* Rendre les sections portefeuille et équipe visibles sans animations */
+    #equipe, #portefeuille {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
+
 
     </style>
 </head>
@@ -590,7 +592,7 @@
                 observer.observe(section);
             });
         });
-    </script>    
+    </script>       
 
 </body>
 </html>
