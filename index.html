@@ -553,24 +553,41 @@ section {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Inclusion de JavaScript pour les animations -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const sections = document.querySelectorAll("section, .team-container, .portefeuille-item, .contact-section");
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    observer.unobserve(entry.target);
-                }
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Smooth scrolling for navbar links
+            const navbarLinks = document.querySelectorAll('.navbar-nav a');
+    
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 45, // Adjust for fixed navbar height
+                        behavior: 'smooth'
+                    });
+                });
             });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
+    
+            // Intersection Observer for section animations
+            const sections = document.querySelectorAll("section, .team-container, .portefeuille-item, .contact-section");
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
-    });
-</script>
+    </script>    
 
 </body>
 </html>
