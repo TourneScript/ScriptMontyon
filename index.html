@@ -291,33 +291,34 @@
         background-color: #1C2842; /* Couleur bleue */
     }
 
-    /* === Contact Section Styles === */
-    .contact-section {
+ /* === Contact Section Styles === */
+ .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
         font-family: 'Helvetica', sans-serif;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px; /* Ajuster les paddings latéraux pour le contenu */
+        padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
         height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
-        width: 100vw; /* Utilise toute la largeur de la fenêtre */
+        margin: 0; /* Supprime l'espace autour du bandeau bleu */
+        width: 100%; /* Utilise toute la largeur de la fenêtre */
         box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
-        margin: 0 auto; /* Centrer le bandeau */
-        position: relative;
     }
 
     /* Section Contact container */
     #contact {
         padding: 0 !important; /* Supprimer le padding de la section contact */
         margin: 0 !important; /* Supprimer la marge de la section contact */
-        width: 100vw; /* Utiliser toute la largeur de la fenêtre */
+        height: 120px; /* Fixer la hauteur de la section */
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        width: 100%; /* Utiliser toute la largeur de la fenêtre */
         position: relative;
-        overflow: hidden; /* S'assurer que rien ne dépasse */
     }
 
     /* Ajouter l'image de fond couvrant toute la largeur sous le bandeau de contact */
-    #contact::before {
+    #contact::after {
         content: "";
         display: block;
         background: url('Images/conteneur.jpg') no-repeat center center; /* Ajouter l'image de fond */
