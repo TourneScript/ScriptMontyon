@@ -259,8 +259,7 @@
             background-color: #1C2842; /* Couleur bleue */
         }
 
-        /* Section Contact */
- 
+    /* Section Contact */
     .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
@@ -272,7 +271,19 @@
         padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
         height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
         margin: 0; /* Supprime l'espace autour du bandeau bleu */
-        padding-top: 0; /* Supprimer tout padding supérieur */
+    }
+
+    /* Section Contact container */
+    #contact {
+        height: 120px; /* Fixer la hauteur de la section */
+        padding: 0 !important; /* Supprimer le padding de la section contact */
+        margin: 0 !important; /* Supprimer la marge de la section contact */
+    }
+
+    /* Ensure there is no margin between sections */
+    section {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     .contact-section .contact-info p {
