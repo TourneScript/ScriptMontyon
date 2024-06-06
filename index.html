@@ -296,11 +296,40 @@
     transform: translateY(0);
 }
 
-/* Parallax Effect */
-.parallax {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+/* Slide-In From Left Effect */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.slide-in-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide-In From Right Effect */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.slide-in-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zoom-In Effect */
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.zoom-in.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* Hover Effects for Buttons and Links */
@@ -377,7 +406,7 @@
     <div class="section-break"></div>
 
     <!-- Section Expertise -->
-    <section id="expertise" class="expertise-section fade-in">
+    <section id="expertise" class="expertise-section slide-in-left">
         <div class="content">
             <h2>Notre expertise</h2>
             <p>
@@ -406,7 +435,7 @@
     <div class="section-break"></div>
      
     <!-- Section Thèse -->
-    <section id="these" class="these-section parallax fade-in">
+    <section id="these" class="these-section slide-in-right">
         <div class="content">
             <h2>Thèse</h2>
             <p>
@@ -428,7 +457,7 @@
     <div class="section-break"></div>
 
     <!-- Section Équipe -->
-    <section id="equipe" class="equipe-section parallax fade-in">
+    <section id="equipe" class="equipe-section zoom-in">
         <h2>Équipe</h2>
         <div class="team-container">
           <div class="team-member">
@@ -468,7 +497,7 @@
       <div class="section-break"></div>
 
     <!-- Section Portefeuille -->
-    <section id="portefeuille" class="portefeuille-section parallax fade-in">
+    <section id="portefeuille" class="portefeuille-section slide-in-left">
         <h2>Portefeuille</h2>
         <p>Plusieurs cibles sont actuellement en étude avancée.</p>
       
@@ -518,7 +547,7 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const faders = document.querySelectorAll('.fade-in');
+    const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in');
     const options = {
         threshold: 0.1,
         rootMargin: "0px 0px -10px 0px"
@@ -535,8 +564,8 @@
         });
     }, options);
 
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
+    elements.forEach(element => {
+        appearOnScroll.observe(element);
     });
 
     window.addEventListener('scroll', function() {
