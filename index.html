@@ -106,6 +106,16 @@
             background-color: #fff; /* Couleur de fond pour la partie gauche */
             padding: 40px;
         }
+
+        .expertise-section .content h2::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 4px; /* Ajustez la hauteur du liseré selon vos besoins */
+            background-color: #1C2842; /* Utilisez la couleur bleue du site */
+            margin-bottom: 20px; /* Ajustez l'espace entre le liseré et le titre */
+        }
+
         .expertise-section .content {
             flex: 1; 
             align-items: center; 
@@ -229,28 +239,30 @@
             margin-bottom: 10px;
         }
 
-        .portefeuille-item p {
-            margin-bottom: 5px;
+        .portefeuille-item {
+            position: relative; /* Pour permettre le positionnement absolu de l'image */
+            padding-bottom: 200px; /* Ajuster cette valeur selon la hauteur souhaitée pour le texte */
         }
 
         .portefeuille-image {
-            width: 100%; /* Make the image span the full width of the item */
-            height: 200px; /* Adjust the height as needed */
-            position: absolute; /* Position the image at the bottom */
+            position: absolute;
             bottom: 0;
             left: 0;
-            object-fit: cover; /* Ensure the image covers the entire area */
+            width: 100%;
+            height: 200px; /* Ajuster la hauteur selon la taille souhaitée */
+            object-fit: cover; /* Assurez-vous que l'image couvre toute la zone */
         }
+
         .footer {
-    background-color: #1C2842; /* Same blue as the navbar */
-    color: #ffffff;
-    font-family: 'Helvetica', sans-serif;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+            background-color: #1C2842; /* Same blue as the navbar */
+            color: #ffffff;
+            font-family: 'Helvetica', sans-serif;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
     .contact-section {
         background-color: #1C2842; /* Same blue as the navbar */
@@ -592,8 +604,7 @@
                 observer.observe(section);
             });
         });
-    </script>
-       
+    </script>    
 
 </body>
 </html>
