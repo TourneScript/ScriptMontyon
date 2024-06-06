@@ -10,26 +10,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- Inclusion des styles CSS -->
     <style>
+        /* === Global Styles === */
         body {
             position: relative;
             padding-top: 45px; /* Hauteur du ruban fixe ajustée */
             font-family: 'Montserrat', sans-serif; /* Texte en Montserrat */
         }
+
         section {
             padding: 30px 0;
             min-height: calc(100vh - 45px - 30px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        #logo {
-            height: 40px; /* Réduire la taille du logo */
-        }
+
+        /* === Navbar Styles === */
         .navbar {
             background-color: #1C2842; /* Couleur du bandeau */
-            padding-top: 8px; /* Réduire la hauteur du bandeau de 20% */
-            padding-bottom: 8px; /* Réduire la hauteur du bandeau de 20% */
+            padding: 8px 0; /* Réduire la hauteur du bandeau de 20% */
         }
+
         .navbar-nav .nav-link {
             color: #ffffff !important; /* Couleur du texte dans le bandeau en blanc */
         }
+
+        #logo {
+            height: 40px; /* Réduire la taille du logo */
+        }
+
+        /* === Hero Section Styles === */
         .hero-section {
             position: relative;
             display: flex;
@@ -39,6 +50,7 @@
             color: #fff;
             min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
         }
+
         .hero-section video {
             position: absolute;
             top: 0;
@@ -48,10 +60,12 @@
             object-fit: cover;
             z-index: 0;
         }
+
         .hero-section .content {
             position: relative;
             z-index: 2;
         }
+
         .hero-section::before {
             content: "";
             position: absolute;
@@ -62,33 +76,39 @@
             background: rgba(0, 0, 0, 0.5); /* Assombrit la vidéo pour un meilleur contraste du texte */
             z-index: 1;
         }
+
         .hero-section img {
             max-width: 250px; /* Ajustez la taille du logo */
             margin-bottom: 20px;
         }
+
         .hero-section p {
             font-style: italic;
             font-size: 1.5em;
         }
+
+        /* === Raison Section Styles === */
         .raison-section {
             position: relative;
             display: flex;
             align-items: center;
-            background-color: #fff; /* Couleur de fond pour la partie gauche */
+            background-color: #fff;
             padding: 40px;
         }
+
         .raison-section .content {
             position: relative;
             z-index: 2;
             background: #fff;
-            padding: 30px; /* Augmenter la marge blanche autour du texte de 50% (20px * 1.5) */
+            padding: 30px;
             color: #1C2842;
             max-width: 600px;
             margin-right: auto;
             margin-left: 15%; /* Décalage du bloc de texte vers la droite de 15% */
-            border-radius: 10px; /* Optional: Adds rounded corners to the white box */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the white box */
+            border-radius: 10px; /* Adds rounded corners to the white box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the white box */
         }
+
         .raison-section .background-image {
             position: absolute;
             top: 0;
@@ -99,12 +119,23 @@
             background: url('Images/disqueuse.jpg') no-repeat center center/cover;
             z-index: 1;
         }
+
+        /* === Expertise Section Styles === */
         .expertise-section {
             position: relative;
             display: flex;
             align-items: center;
-            background-color: #fff; /* Couleur de fond pour la partie gauche */
+            background-color: #fff;
             padding: 40px;
+        }
+
+        .expertise-section .content {
+            flex: 1;
+            align-items: center;
+            margin: 0;
+            max-width: 65%;
+            padding: 20px;
+            color: #1C2842;
         }
 
         .expertise-section .content h2::before {
@@ -116,14 +147,6 @@
             margin-bottom: 20px; /* Ajustez l'espace entre le liseré et le titre */
         }
 
-        .expertise-section .content {
-            flex: 1; 
-            align-items: center; 
-            margin: 0;
-            max-width: 65%; /* Content won't exceed 65% width */
-            padding: 20px;
-            color: #1C2842;
-        }
         .expertise-section .background-image {
             position: absolute;
             top: 0;
@@ -134,15 +157,18 @@
             background: url('Images/pipes.jpg') no-repeat center center/cover;
             z-index: 1;
         }
+
+        /* === These Section Styles === */
         .these-section {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 40px;
-            min-height: calc(100vh - 45px); /* Occupy full screen height minus the header */
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
             background: url('Images/logistique.jpg') no-repeat center center/cover;
         }
+
         .these-section .content {
             position: relative;
             z-index: 2;
@@ -151,31 +177,25 @@
             color: #1C2842;
             max-width: 800px;
             margin: 0 auto;
-            border-radius: 10px; /* Optional: Adds rounded corners to the white box */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the white box */
+            border-radius: 10px; /* Adds rounded corners to the white box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the white box */
         }
+
         .these-section ul {
             padding-left: 20px; /* Indent the bullet points */
             line-height: 1.8; /* Increase line height for better spacing */
         }
-        .these-section h2 {
+
+        .these-section h2, .these-section p {
             color: #1C2842;
-        }
-        .these-section p {
-            color: #1C2842;
-        }
-        .these-section strong {
-            font-weight: bold;
-        }
-        .these-section em {
-            font-style: italic;
         }
 
+        /* === Team Section Styles === */
         .team-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            border-radius: 10px; /* Optional: Adds rounded corners to the white box */
+            border-radius: 10px; /* Adds rounded corners to the white box */
             background-color: #1C2842;
             margin-bottom: 25px; /* Add margin below the container */
         }
@@ -184,7 +204,6 @@
             flex: 0 0 25%; /* Occupy 25% of the width for all team members */
             margin: 20px; /* Increase horizontal margins */
             text-align: center;
-            flex-grow: 0; /* Prevent vertical expansion */
         }
 
         .image-container {
@@ -212,8 +231,8 @@
             margin-bottom: 5px;
         }
 
-    /* Section Portefeuille */
-    #portefeuille {
+        /* === Portefeuille Section Styles === */
+        #portefeuille {
             padding: 20px;
         }
 
@@ -242,7 +261,7 @@
             object-fit: cover; /* Ensure the image covers the entire area */
         }
 
-        /* CSS pour les liserés bleus */
+        /* === Liserés Styles === */
         .liseres {
             margin-top: 20px; /* Ajouter un espace au-dessus des liserés */
         }
@@ -260,124 +279,87 @@
             background-color: #1C2842; /* Couleur bleue */
         }
 
-    /* Section Contact */
-    .contact-section {
-        background-color: #1C2842; /* Même bleu que la navbar */
-        color: #ffffff;
-        font-family: 'Helvetica', sans-serif;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
-        height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
-        margin: 0; /* Supprime l'espace autour du bandeau bleu */
-    }
-
-    /* Section Contact container */
-    #contact {
-        height: 120px; /* Fixer la hauteur de la section */
-        padding: 0 !important; /* Supprimer le padding de la section contact */
-        margin: 0 !important; /* Supprimer la marge de la section contact */
-    }
-
-    /* Ensure there is no margin between sections */
-    section {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-    .contact-section .contact-info p {
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    .contact-section .social-icons a {
-        color: #ffffff;
-        text-decoration: none;
-        margin-left: 10px;
-        font-size: 1.2em;
-    }
-
-    /* styles.css */
-
-    .section-break {
-        height: 30px;
-        background-color: #1C2842;
-    }
-
-        /* Supprimer les animations de la hero section */
-    .hero-section {
-        opacity: 1; /* Assurez-vous que la hero section est toujours visible */
-        transform: none; /* Réinitialiser les transformations */
-    }
-
-    /* Animation for fade-in effect */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.95);
+        /* === Contact Section Styles === */
+        .contact-section {
+            background-color: #1C2842; /* Même bleu que la navbar */
+            color: #ffffff;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
+            height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
+            margin: 0; /* Supprime l'espace autour du bandeau bleu */
         }
-        to {
+
+        .contact-section .contact-info p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .contact-section .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+
+        /* === Animations === */
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animation for slide-in effect from the right */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Animation for slide-in effect from the left */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Appliquer les animations une fois visible */
+        .raison-section.visible {
+            animation: slideInRight 1.5s ease-in-out forwards;
+        }
+
+        .expertise-section.visible {
+            animation: slideInLeft 1.5s ease-in-out forwards;
+        }
+
+        .these-section.visible, .contact-section.visible {
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        /* Rendre les sections portefeuille et équipe visibles sans animations */
+        #equipe, #portefeuille {
             opacity: 1;
-            transform: scale(1);
+            transform: none;
+            transition: none;
         }
-    }
-
-    /* Animation for slide-in effect from the right */
-    @keyframes slideInRight {
-        from {
-            transform: translateX(100%) scale(0.95);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0) scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Animation for slide-in effect from the left */
-    @keyframes slideInLeft {
-        from {
-            transform: translateX(-100%) scale(0.95);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0) scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Initial state */
-    section, .contact-section {
-        opacity: 0;
-        transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    /* Appliquer les animations une fois visible */
-    .raison-section.visible {
-        animation: slideInRight 1.5s ease-in-out forwards;
-    }
-
-    .expertise-section.visible {
-        animation: slideInLeft 1.5s ease-in-out forwards;
-    }
-
-    .these-section.visible {
-        animation: fadeIn 1.5s ease-in-out forwards;
-    }
-
-    .contact-section.visible {
-        animation: fadeIn 0.3s ease-in-out forwards;
-    }
-
-    /* Rendre les sections portefeuille et équipe visibles sans animations */
-    #equipe, #portefeuille {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-
 
     </style>
 </head>
