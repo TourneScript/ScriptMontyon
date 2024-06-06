@@ -277,32 +277,22 @@
     }
 
     /* Section Contact */
-    .contact-section {
+        .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
         font-family: 'Helvetica', sans-serif;
-        padding: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0; /* Supprimez l'espace autour du bandeau bleu */
-        height: auto; /* Ajustez la hauteur automatiquement */
-        min-height: 60px; /* Ajustez cette valeur pour définir la hauteur du bandeau bleu */
-    }
-
-
-    .contact-section .contact-info {
-        margin-left: 40px;
+        padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
+        height: 60px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
+        margin: 0; /* Supprime l'espace autour du bandeau bleu */
     }
 
     .contact-section .contact-info p {
         margin: 0;
         line-height: 1.5;
-    }
-
-    .contact-section .social-icons {
-        margin-right: 40px;
     }
 
     .contact-section .social-icons a {
@@ -311,6 +301,7 @@
         margin-left: 10px;
         font-size: 1.2em;
     }
+
     /* styles.css */
 
     .section-break {
@@ -380,7 +371,7 @@
     }
 
     .contact-section.visible {
-        animation: fadeIn 0.5s ease-in-out forwards;
+        animation: fadeIn 0.3s ease-in-out forwards;
     }
 
     /* Rendre les sections portefeuille et équipe visibles sans animations */
