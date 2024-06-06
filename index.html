@@ -16,8 +16,8 @@
             font-family: 'Montserrat', sans-serif; /* Texte en Montserrat */
         }
         section {
-            padding: 60px 0;
-            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+            padding: 30px 0;
+            min-height: calc(100vh - 45px - 30px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
         }
         #logo {
             height: 40px; /* Réduire la taille du logo */
@@ -271,9 +271,8 @@
             background-color: #1C2842; /* Couleur bleue */
         }
 
-
     /* Section Contact */
-        .contact-section {
+    .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
         font-family: 'Helvetica', sans-serif;
@@ -284,7 +283,10 @@
         padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
         height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
         margin: 0; /* Supprime l'espace autour du bandeau bleu */
+        position: relative; /* Permet de positionner la section par rapport aux autres */
+        top: -30px; /* Remonter la section de 30 pixels */
     }
+
 
     .contact-section .contact-info p {
         margin: 0;
@@ -556,11 +558,9 @@
         </div>
     </section>
 
-    <div class="section-break"></div>
-
     <!-- Section Contact -->
     <section id="contact" class="container mt-5"></section>
-    <div class="contact-section">
+    <div class="contact-section special-contact">
         <div class="contact-info">
             <h4>Contact</h4>
             <p>Email: <a href="mailto:q.humblot@montyon.com" style="color: #ffffff;">contact@montyon.com</a></p>
@@ -570,6 +570,7 @@
             <a href="https://www.linkedin.com/company/montyon-capital/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
         </div>
     </div>
+
 </section>
 
     <!-- Inclusion de JavaScript pour Bootstrap -->
