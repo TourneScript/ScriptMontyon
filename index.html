@@ -252,117 +252,119 @@
     width: 100%;
 }
 
-.contact-section {
-    background-color: #1C2842; /* Same blue as the navbar */
-    color: #ffffff;
-    font-family: 'Helvetica', sans-serif;
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .contact-section {
+        background-color: #1C2842; /* Same blue as the navbar */
+        color: #ffffff;
+        font-family: 'Helvetica', sans-serif;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.contact-section .contact-info {
-    margin-left: 40px;
-}
+    .contact-section .contact-info {
+        margin-left: 40px;
+    }
 
-.contact-section .contact-info p {
-    margin: 0;
-    line-height: 1.5;
-}
+    .contact-section .contact-info p {
+        margin: 0;
+        line-height: 1.5;
+    }
 
-.contact-section .social-icons {
-    margin-right: 40px;
-}
+    .contact-section .social-icons {
+        margin-right: 40px;
+    }
 
-.contact-section .social-icons a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 1.2em;
-}
-/* styles.css */
+    .contact-section .social-icons a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+    /* styles.css */
 
-.section-break {
-    height: 30px;
-    background-color: #1C2842;
-}
-/* Supprimer les animations de la hero section */
-.hero-section {
-    opacity: 1; /* Assurez-vous que la hero section est toujours visible */
-    transform: none; /* Réinitialiser les transformations */
-}
+    .section-break {
+        height: 30px;
+        background-color: #1C2842;
+    }
 
-/* Animation for fade-in effect */
-@keyframes fadeIn {
-    from {
+    /* Supprimer les animations de la hero section */
+    .hero-section {
+        opacity: 1; /* Assurez-vous que la hero section est toujours visible */
+        transform: none; /* Réinitialiser les transformations */
+    }
+
+    /* Animation for fade-in effect */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Animation for slide-in effect from the right */
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%) scale(0.95);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Animation for slide-in effect from the left */
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-100%) scale(0.95);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Initial state */
+    section, .team-container, .portefeuille-item, .contact-section {
         opacity: 0;
-        transform: scale(0.95);
+        transition: opacity 1s ease-out, transform 1s ease-out;
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+
+    /* Appliquer les animations une fois visible */
+    .raison-section.visible {
+        animation: slideInRight 1.5s ease-in-out forwards;
     }
-}
 
-/* Animation for slide-in effect from the right */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%) scale(0.95);
-        opacity: 0;
+    .expertise-section.visible {
+        animation: slideInLeft 1.5s ease-in-out forwards;
     }
-    to {
-        transform: translateX(0) scale(1);
-        opacity: 1;
+
+    .these-section.visible {
+        animation: fadeIn 1.5s ease-in-out forwards;
     }
-}
 
-/* Animation for slide-in effect from the left */
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%) scale(0.95);
-        opacity: 0;
+    .team-container.visible {
+        animation: slideInRight 1.5s ease-in-out forwards;
     }
-    to {
-        transform: translateX(0) scale(1);
-        opacity: 1;
+
+    .portefeuille-item.visible {
+        animation: slideInLeft 1.5s ease-in-out forwards;
     }
-}
 
-/* Initial state */
-section, .team-container, .portefeuille-item, .contact-section {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-/* Appliquer les animations une fois visible */
-.raison-section.visible {
-    animation: slideInRight 2s ease-in-out forwards;
-}
-
-.expertise-section.visible {
-    animation: slideInLeft 2s ease-in-out forwards;
-}
-
-.these-section.visible {
-    animation: slideInRight 2s ease-in-out forwards;
-}
-
-.team-container.visible {
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
-.portefeuille-item.visible {
-    animation: slideInLeft 2s ease-in-out forwards;
-}
-
-.contact-section.visible {
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
+    .contact-section.visible {
+        animation: fadeIn 1.5s ease-in-out forwards;
+    }
+    
     </style>
 </head>
+
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -590,7 +592,7 @@ section, .team-container, .portefeuille-item, .contact-section {
                 observer.observe(section);
             });
         });
-    </script>    
+    </script>      
 
 </body>
 </html>
