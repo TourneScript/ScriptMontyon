@@ -331,27 +331,27 @@ section {
     animation-fill-mode: forwards;
 }
 
-.raison-section {
+.raison-section.visible {
     animation: slideInRight 2.5s ease-in-out;
 }
 
-.expertise-section {
+.expertise-section.visible {
     animation: slideInLeft 2.5s ease-in-out;
 }
 
-.these-section {
+.these-section.visible {
     animation: slideInRight 2.5s ease-in-out;
 }
 
-.team-container {
+.team-container.visible {
     animation: fadeIn 2.5s ease-in-out;
 }
 
-.portefeuille-item {
+.portefeuille-item.visible {
     animation: slideInLeft 2.5s ease-in-out;
 }
 
-.contact-section {
+.contact-section.visible {
     animation: fadeIn 2.5s ease-in-out;
 }
 
@@ -585,7 +585,7 @@ section {
                 observer.observe(section);
             });
         });
-    </script>       
+    </script>          
 
 </body>
 </html>
