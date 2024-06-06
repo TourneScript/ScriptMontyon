@@ -11,7 +11,6 @@
     <!-- Inclusion des styles CSS -->
     <style>
         /* === Global Styles === */
-
         html, body {
             margin: 0;
             padding: 0;
@@ -37,7 +36,6 @@
         }
 
         /* === Section break === */
-
         .section-break {
             height: 30px;
             background-color: #1C2842;
@@ -210,12 +208,26 @@
         }
 
         /* === Team Section Styles === */
-        #equipe {
-            background-color: #ffffff; /* Fond blanc pour la section équipe */
-            color: #1C2842; /* Texte en bleu pour la section équipe */
-            width: 100vw; /* Assure que la section couvre toute la largeur de l'écran */
-            padding: 40px 0; /* Padding pour la section */
-            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+        .team-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
+            background-color: #fff; /* Fond blanc */
+        }
+
+        .team-section .content {
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            padding: 30px;
+            color: #1C2842;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px; /* Adds rounded corners to the white box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the white box */
         }
 
         .team-container {
@@ -312,7 +324,6 @@
             box-sizing: border-box; /* Assure que le padding ne dépasse pas la largeur */
         }
 
-
         /* Section Contact container */
         #contact {
             padding: 0 !important; /* Supprimer le padding de la section contact */
@@ -330,6 +341,19 @@
             text-decoration: none;
             margin-left: 10px;
             font-size: 1.2em;
+        }
+
+        /* === Animations === */
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* === Animations === */
