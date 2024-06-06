@@ -287,25 +287,29 @@
 .section-break {
     height: 30px;
     background-color: #1C2842;
+}
+/* Animation for fade-in effect */
 
 /* Animation for fade-in effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: scale(0.95);
     }
     to {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
 /* Animation for slide-in effect from the right */
 @keyframes slideInRight {
     from {
-        transform: translateX(100%);
+        transform: translateX(100%) scale(0.95);
         opacity: 0;
     }
     to {
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
         opacity: 1;
     }
 }
@@ -313,11 +317,11 @@
 /* Animation for slide-in effect from the left */
 @keyframes slideInLeft {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-100%) scale(0.95);
         opacity: 0;
     }
     to {
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
         opacity: 1;
     }
 }
@@ -344,7 +348,18 @@ section {
     animation: slideInRight 2s ease-in-out;
 }
 
+.team-container {
+    animation: fadeIn 2s ease-in-out;
 }
+
+.portefeuille-item {
+    animation: slideInLeft 2s ease-in-out;
+}
+
+.contact-section {
+    animation: fadeIn 2s ease-in-out;
+}
+
 
     </style>
 </head>
