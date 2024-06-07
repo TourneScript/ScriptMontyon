@@ -303,7 +303,7 @@
         background-color: #1C2842; /* Couleur bleue */
     }
 
-    /* === Contact Section Styles === */
+ /* === Contact Section Styles === */
     .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
@@ -316,6 +316,7 @@
         margin: 0; /* Supprime l'espace autour du bandeau bleu */
         width: 100%; /* Utilise toute la largeur de la fenêtre */
         box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+        overflow: hidden; /* S'assurer que rien ne dépasse de la largeur de l'écran */
     }
 
     /* Section Contact container */
@@ -326,6 +327,7 @@
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
         position: relative;
+        overflow: hidden; /* S'assurer que rien ne dépasse de la largeur de l'écran */
     }
 
     /* Ajouter l'image de fond couvrant toute la largeur sous le bandeau de contact */
@@ -334,7 +336,7 @@
         display: block;
         background: url('Images/conteneur.jpg') no-repeat center center; /* Ajouter l'image de fond */
         background-size: cover; /* S'assurer que l'image couvre toute la section */
-        width: 100vw; /* Utiliser toute la largeur de la fenêtre */
+        width: 100%; /* Utiliser toute la largeur de la fenêtre */
         height: calc(100vh - 120px); /* Ajuster la hauteur pour couvrir le reste de la page */
         position: absolute;
         top: 120px; /* Placer l'image sous le bandeau de contact */
@@ -356,7 +358,6 @@
         margin-left: 10px;
         font-size: 1.2em;
     }
-
 
     /* === Animations === */
     /* Animation for fade-in effect */
