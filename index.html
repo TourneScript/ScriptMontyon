@@ -788,8 +788,10 @@
     <!-- Inclusion de JavaScript pour les animations -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Définir la langue par défaut sur le français
         setLanguage('fr');
 
+        // Smooth scrolling pour les liens de la navbar
         const navbarLinks = document.querySelectorAll('.navbar-nav a');
 
         navbarLinks.forEach(link => {
@@ -805,6 +807,7 @@
             });
         });
 
+        // Intersection Observer pour les animations de section
         const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
 
         const observerOptions = {
@@ -823,12 +826,38 @@
             observer.observe(section);
         });
 
+        // Gérer le changement de langue via le dropdown
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', function() {
                 const selectedLang = this.getAttribute('data-lang');
                 setLanguage(selectedLang);
             });
         });
+
+        // Fonction pour changer la langue du contenu
+        function setLanguage(language) {
+            // Masquer toutes les sections de langue
+            document.querySelectorAll('.language-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Afficher les sections de la langue sélectionnée
+            document.querySelectorAll(`.language-section[data-lang="${language}"]`).forEach(section => {
+                section.style.display = 'block';
+            });
+
+            // Mettre à jour le texte du dropdown
+            document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
+
+            // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
+            document.querySelectorAll('.navbar-nav a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
+                    link.setAttribute('href', `#${sectionId}`);
+                }
+            });
+        }
     });
 
     </script>
