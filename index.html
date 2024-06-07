@@ -12,14 +12,13 @@
     <style>
 
  /* === Global Styles === */
-    
-    * {
+       
+        * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        }
-  
- 
+    }
+
     html, body {
         width: 100%;
         height: 100%;
@@ -32,6 +31,7 @@
         margin: 0; /* Supprime la marge par défaut */
         padding: 0; /* Supprime le padding par défaut */
     }
+
 
     section {
         padding: 30px 0;
@@ -93,61 +93,55 @@
         height: 40px; /* Réduire la taille du logo */
     }
 
-    /* === Hero Section Styles === */
-        .hero-section {
+     /* Styles pour la section hero */
+    .hero-section {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: #fff;
-        min-height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
-        opacity: 1;
-        transform: none;
-    }
-
-    .hero-section .content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Assurer que le contenu occupe toute la largeur */
-        height: 100%; /* Assurer que le contenu occupe toute la hauteur */
+        height: calc(100vh - 45px); /* Occuper toute la hauteur de l'écran, moins la hauteur du ruban */
     }
 
     .hero-section video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
     }
 
-    .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5); /* Assombrit la vidéo pour un meilleur contraste du texte */
-        z-index: 1;
+    .hero-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Assombrit la vidéo pour un meilleur contraste du texte */
+            z-index: 1;
+    }
+
+    .hero-section .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre les éléments horizontalement */
+            justify-content: center; /* Centre les éléments verticalement */
     }
 
     .hero-section img {
-        max-width: 250px;
-        margin-bottom: 20px;
+            max-width: 250px; /* Ajustez la taille du logo */
+            margin-bottom: 20px;
     }
 
     .hero-section p {
-        font-style: italic;
-        font-size: 1.5em;
+            font-style: italic;
+            font-size: 1.5em;
     }
-
 
     /* === Raison Section Styles === */
     .raison-section {
