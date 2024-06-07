@@ -787,7 +787,7 @@
 
     <!-- Inclusion de JavaScript pour les animations -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         // Définir la langue par défaut sur le français
         setLanguage('fr');
 
@@ -800,10 +800,12 @@
                 const targetId = this.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
 
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
@@ -826,6 +828,7 @@
             observer.observe(section);
         });
 
+        // Gérer le changement de langue via le dropdown
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', function() {
                 const selectedLang = this.getAttribute('data-lang');
@@ -853,7 +856,6 @@
             });
         }
     });
-
 
     </script>
 
