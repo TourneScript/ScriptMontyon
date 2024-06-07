@@ -304,13 +304,14 @@
     }
 
     /* === Contact Section Styles === */
-/* === Contact Section Styles === */
+
     .contact-section {
         background-color: #1C2842; /* Même bleu que la navbar */
         color: #ffffff;
         font-family: 'Helvetica', sans-serif;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column; /* Permet de centrer verticalement le contenu */
+        justify-content: center;
         align-items: center;
         padding: 0 40px; /* Ajuster les paddings latéraux pour le contenu */
         height: 120px; /* Hauteur spécifique pour correspondre à la hauteur du ruban bleu */
@@ -319,30 +320,23 @@
         box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
     }
 
-    /* Section Contact container */
-    #contact {
-        height: 120px; /* Fixer la hauteur de la section */
-        padding: 0 !important; /* Supprimer le padding de la section contact */
-        margin: 0 !important; /* Supprimer la marge de la section contact */
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-        position: relative;
-        overflow: hidden; /* S'assurer que rien ne dépasse de la largeur de l'écran */
+    .contact-info, .social-icons {
+        text-align: center; /* Centrer le texte */
     }
 
-    /* Contact Info */
     .contact-section .contact-info p {
         margin: 0;
         line-height: 1.5;
     }
 
-    /* Social Icons */
     .contact-section .social-icons a {
         color: #ffffff;
         text-decoration: none;
         margin-left: 10px;
         font-size: 1.2em;
+        margin-top: 10px; /* Espace entre les infos de contact et les icônes sociales */
     }
+
 
     /* === Animations === */
     /* Animation for fade-in effect */
