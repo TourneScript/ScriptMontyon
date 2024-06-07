@@ -114,10 +114,10 @@
     }
 
     .hero-section .content {
-        position: absolute;
-        bottom: 150px; /* Positionne le contenu à 200 pixels du bas */
+        position: relative;
+        bottom: 50%; /* Positionne le contenu à la moitié de la hauteur de la section */
+        transform: translateY(50%) translateX(-50%); /* Ajuste la position verticale et centre horizontalement */
         left: 50%; /* Centre horizontalement */
-        transform: translateX(-50%); /* Centre horizontalement */
         z-index: 2;
     }
 
