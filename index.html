@@ -110,10 +110,11 @@
         position: relative;
         z-index: 2;
         display: flex;
-        flex-direction: column; /* Permet d'empiler les éléments verticalement */
-        align-items: center; /* Centre les éléments horizontalement */
-        justify-content: center; /* Centre les éléments verticalement */
-        height: 100%; /* S'assurer que le contenu occupe toute la hauteur disponible */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Assurer que le contenu occupe toute la largeur */
+        height: 100%; /* Assurer que le contenu occupe toute la hauteur */
     }
 
     .hero-section video {
@@ -138,7 +139,7 @@
     }
 
     .hero-section img {
-        max-width: 250px; /* Ajustez la taille du logo */
+        max-width: 250px;
         margin-bottom: 20px;
     }
 
@@ -438,20 +439,21 @@
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
 
+    <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">
-            <img id="logo" src="Images/logo_montyon_blanc.png" alt="Logo officiel Montyon blanc" class="d-inline-block align-top">
+            <img id="logo" src="Images/logo_montyon_blanc.png" alt="Official Montyon logo" class="d-inline-block align-top">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#raison">Raison d'être</a></li>
+                <li class="nav-item"><a class="nav-link" href="#raison">Mission</a></li>
                 <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
-                <li class="nav-item"><a class="nav-link" href="#these">Thèse</a></li>
-                <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portefeuille">Portefeuille</a></li>
+                <li class="nav-item"><a class="nav-link" href="#these">Thesis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#equipe">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portefeuille">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -847,15 +849,24 @@
 
             document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
 
-            document.querySelectorAll('.navbar-nav a').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    const sectionId = href.substring(1).split('-')[0];
-                    link.setAttribute('href', `#${sectionId}`);
-                }
-            });
+            if (language === 'en') {
+                document.querySelectorAll('.navbar-nav .nav-link')[0].textContent = 'Mission';
+                document.querySelectorAll('.navbar-nav .nav-link')[1].textContent = 'Expertise';
+                document.querySelectorAll('.navbar-nav .nav-link')[2].textContent = 'Thesis';
+                document.querySelectorAll('.navbar-nav .nav-link')[3].textContent = 'Team';
+                document.querySelectorAll('.navbar-nav .nav-link')[4].textContent = 'Portfolio';
+                document.querySelectorAll('.navbar-nav .nav-link')[5].textContent = 'Contact';
+            } else {
+                document.querySelectorAll('.navbar-nav .nav-link')[0].textContent = 'Raison d\'être';
+                document.querySelectorAll('.navbar-nav .nav-link')[1].textContent = 'Expertise';
+                document.querySelectorAll('.navbar-nav .nav-link')[2].textContent = 'Thèse';
+                document.querySelectorAll('.navbar-nav .nav-link')[3].textContent = 'Équipe';
+                document.querySelectorAll('.navbar-nav .nav-link')[4].textContent = 'Portefeuille';
+                document.querySelectorAll('.navbar-nav .nav-link')[5].textContent = 'Contact';
+            }
         }
     });
+
 
     </script>
 
