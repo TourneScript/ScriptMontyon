@@ -58,6 +58,23 @@
         color: #ffffff !important; /* Couleur du texte dans le bandeau en blanc */
     }
 
+    /* Custom styles for the language switcher */
+    .navbar-nav .nav-item .dropdown-menu {
+        background-color: #1C2842; /* Blue background */
+    }
+
+    .navbar-nav .nav-item .dropdown-item {
+        color: #ffffff; /* White text */
+    }
+
+    .navbar-nav .nav-item .dropdown-item:hover {
+        background-color: #0f172a; /* Darker blue on hover */
+    }
+
+    .navbar-nav .nav-item .dropdown-toggle::after {
+        display: none; /* Remove default dropdown arrow */
+    }
+
     #logo {
         height: 40px; /* Réduire la taille du logo */
     }
@@ -416,12 +433,15 @@
                 <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portefeuille">Portefeuille</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item">
-                    <select id="language-switcher" class="form-control">
-                        <option value="fr">Français</option>
-                        <option value="en">English</option>
-                    </select>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Fr
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#" data-lang="fr">Fr</a>
+                        <a class="dropdown-item" href="#" data-lang="en">En</a>
+                    </div>
+                </li>                
             </ul>
         </div>
     </nav>
@@ -763,6 +783,9 @@
                 section.style.display = 'block';
             });
 
+            // Mettre à jour le texte du dropdown
+            document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
+
             // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
             document.querySelectorAll('.navbar-nav a').forEach(link => {
                 const href = link.getAttribute('href');
@@ -812,12 +835,15 @@
                 observer.observe(section);
             });
 
-            // Gérer le changement de langue
-            document.getElementById('language-switcher').addEventListener('change', function() {
-                const selectedLang = this.value;
-                setLanguage(selectedLang);
+            // Gérer le changement de langue via le dropdown
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                });
             });
         });
+
     </script>
     
 
