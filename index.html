@@ -46,7 +46,7 @@
 
     /* === Section break === */
     .section-break {
-        height: 40px;
+        height: 45px;
         background-color: #1C2842;
     }
 
@@ -113,6 +113,7 @@
         flex-direction: column; /* Permet d'empiler les éléments verticalement */
         align-items: center; /* Centre les éléments horizontalement */
         justify-content: center; /* Centre les éléments verticalement */
+        height: 100%; /* S'assurer que le contenu occupe toute la hauteur disponible */
     }
 
     .hero-section video {
@@ -124,7 +125,6 @@
         object-fit: cover;
         z-index: 0;
     }
-
 
     .hero-section::before {
         content: "";
