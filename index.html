@@ -808,7 +808,7 @@
         });
 
         // Intersection Observer pour les animations de section
-        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
+        const sections = document.querySelectorAll("section:not(.hero-section)");
 
         const observerOptions = {
             threshold: 0.1
@@ -834,26 +834,21 @@
             });
         });
 
-        // Fonction pour changer la langue du contenu
         function setLanguage(language) {
-            // Masquer toutes les sections de langue
             document.querySelectorAll('.language-section').forEach(section => {
                 section.style.display = 'none';
             });
 
-            // Afficher les sections de la langue sélectionnée
             document.querySelectorAll(`.language-section[data-lang="${language}"]`).forEach(section => {
                 section.style.display = 'block';
             });
 
-            // Mettre à jour le texte du dropdown
             document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
 
-            // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
             document.querySelectorAll('.navbar-nav a').forEach(link => {
                 const href = link.getAttribute('href');
                 if (href.startsWith('#')) {
-                    const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
+                    const sectionId = href.substring(1).split('-')[0];
                     link.setAttribute('href', `#${sectionId}`);
                 }
             });
