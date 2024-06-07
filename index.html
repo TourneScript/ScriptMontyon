@@ -47,7 +47,6 @@
         height: 30px;
         background-color: #1C2842;
     }
-
     /* === Navbar Styles === */
     .navbar {
         background-color: #1C2842; /* Couleur du bandeau */
@@ -65,14 +64,31 @@
 
     .navbar-nav .nav-item .dropdown-item {
         color: #ffffff; /* White text */
+        background-color: #1C2842; /* Blue background */
+        border: none; /* No border */
     }
 
     .navbar-nav .nav-item .dropdown-item:hover {
         background-color: #0f172a; /* Darker blue on hover */
     }
 
+    .navbar-nav .nav-item .dropdown-toggle {
+        color: #ffffff; /* White text */
+        background-color: #1C2842; /* Blue background */
+        border: none; /* No border */
+        padding: 8px 16px; /* Padding for a better look */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for relief */
+    }
+
     .navbar-nav .nav-item .dropdown-toggle::after {
         display: none; /* Remove default dropdown arrow */
+    }
+
+    /* Add a slight hover effect for the toggle button */
+    .navbar-nav .nav-item .dropdown-toggle:hover {
+        background-color: #0f172a; /* Darker blue on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
     }
 
     #logo {
