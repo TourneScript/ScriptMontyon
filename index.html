@@ -803,7 +803,7 @@
             const href = link.getAttribute('href');
             if (href.startsWith('#')) {
                 const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
-                link.setAttribute('href', `#${sectionId}-${language}`);
+                link.setAttribute('href', `#${sectionId}`);
             }
         });
     }
@@ -818,9 +818,8 @@
         navbarLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1).split('-')[0];
-                const targetLang = document.querySelector('.language-section[data-lang="fr"]').style.display === 'block' ? 'fr' : 'en';
-                const targetSection = document.querySelector(`#${targetId}-${targetLang}`);
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
 
                 window.scrollTo({
                     top: targetSection.offsetTop - 45, // Ajuster pour la hauteur de la navbar fixe
