@@ -788,10 +788,8 @@
     <!-- Inclusion de JavaScript pour les animations -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Définir la langue par défaut sur le français
         setLanguage('fr');
 
-        // Smooth scrolling pour les liens de la navbar
         const navbarLinks = document.querySelectorAll('.navbar-nav a');
 
         navbarLinks.forEach(link => {
@@ -809,7 +807,6 @@
             });
         });
 
-        // Intersection Observer pour les animations de section
         const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
 
         const observerOptions = {
@@ -828,7 +825,6 @@
             observer.observe(section);
         });
 
-        // Gérer le changement de langue via le dropdown
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', function() {
                 const selectedLang = this.getAttribute('data-lang');
