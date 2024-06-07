@@ -114,11 +114,12 @@
     }
 
     .hero-section .content {
-        position: relative;
+        position: absolute;
+        bottom: 100px; /* Positionne le contenu à 200 pixels du bas */
+        left: 50%; /* Centre horizontalement */
+        transform: translateX(-50%); /* Centre horizontalement */
         z-index: 2;
-        bottom: 200px; /* Ajoutez cette ligne pour déplacer le contenu vers le haut */
     }
-
 
     .hero-section::before {
         content: "";
