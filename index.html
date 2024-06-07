@@ -783,81 +783,81 @@
 
     <!-- Inclusion de JavaScript pour les animations -->
     <script>
-        // Fonction pour changer la langue du contenu
-        function setLanguage(language) {
-            // Masquer toutes les sections de langue
-            document.querySelectorAll('.language-section').forEach(section => {
-                section.style.display = 'none';
-            });
+    // Fonction pour changer la langue du contenu
+    function setLanguage(language) {
+        // Masquer toutes les sections de langue
+        document.querySelectorAll('.language-section').forEach(section => {
+            section.style.display = 'none';
+        });
 
-            // Afficher les sections de la langue sélectionnée
-            document.querySelectorAll(`.language-section[data-lang="${language}"]`).forEach(section => {
-                section.style.display = 'block';
-            });
+        // Afficher les sections de la langue sélectionnée
+        document.querySelectorAll(`.language-section[data-lang="${language}"]`).forEach(section => {
+            section.style.display = 'block';
+        });
 
-            // Mettre à jour le texte du dropdown
-            document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
+        // Mettre à jour le texte du dropdown
+        document.getElementById('languageDropdown').textContent = language === 'fr' ? 'Fr' : 'En';
 
-            // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
-            document.querySelectorAll('.navbar-nav a').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
-                    link.setAttribute('href', `#${sectionId}-${language}`);
-                }
-            });
-        }
+        // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
+        document.querySelectorAll('.navbar-nav a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+                const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
+                link.setAttribute('href', `#${sectionId}-${language}`);
+            }
+        });
+    }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Définir la langue par défaut sur le français
-            setLanguage('fr');
+    document.addEventListener("DOMContentLoaded", function() {
+        // Définir la langue par défaut sur le français
+        setLanguage('fr');
 
-            // Smooth scrolling pour les liens de la navbar
-            const navbarLinks = document.querySelectorAll('.navbar-nav a');
+        // Smooth scrolling pour les liens de la navbar
+        const navbarLinks = document.querySelectorAll('.navbar-nav a');
 
-            navbarLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1).split('-')[0];
+                const targetLang = document.querySelector('.language-section[data-lang="fr"]').style.display === 'block' ? 'fr' : 'en';
+                const targetSection = document.querySelector(`#${targetId}-${targetLang}`);
 
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 45, // Ajuster pour la hauteur de la navbar fixe
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Intersection Observer pour les animations de section
-            const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
-
-            const observerOptions = {
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Gérer le changement de langue via le dropdown
-            document.querySelectorAll('.dropdown-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const selectedLang = this.getAttribute('data-lang');
-                    setLanguage(selectedLang);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 45, // Ajuster pour la hauteur de la navbar fixe
+                    behavior: 'smooth'
                 });
             });
         });
 
+        // Intersection Observer pour les animations de section
+        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Gérer le changement de langue via le dropdown
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedLang = this.getAttribute('data-lang');
+                setLanguage(selectedLang);
+            });
+        });
+    });
+
     </script>
-    
 
 </body>
 </html>
