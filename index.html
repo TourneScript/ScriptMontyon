@@ -395,12 +395,12 @@
         transition: none;
     }
 
-
     </style>
 
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
     <!-- Ruban -->
+
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">
             <img id="logo" src="Images/logo_montyon_blanc.png" alt="Logo officiel Montyon blanc" class="d-inline-block align-top">
@@ -416,12 +416,18 @@
                 <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portefeuille">Portefeuille</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item">
+                    <select id="language-switcher" class="form-control">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Hero Section - Français -->
+    <section class="hero-section language-section" data-lang="fr">
         <video autoplay muted loop>
             <source src="movies/cover_montyon2.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -432,10 +438,22 @@
         </div>
     </section>
 
+    <!-- Hero Section - English -->
+    <section class="hero-section language-section" data-lang="en" style="display: none;">
+        <video autoplay muted loop>
+            <source src="movies/cover_montyon2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <img src="Images/logo_short_blanc.png" alt="Montyon Logo">
+            <p>An agile vehicle dedicated to non-vanilla opportunities</p>
+        </div>
+    </section>
+
     <div class="section-break"></div>
 
-    <!-- Section Raison d'être -->
-    <section id="raison" class="raison-section">
+    <!-- Section Raison d'être - Français -->
+    <section id="raison" class="raison-section language-section" data-lang="fr">
         <div class="content">
             <h2>Montyon : un véhicule agile dédié aux projets industriels non-conventionnels à forte rentabilité</h2>
             <p>
@@ -446,40 +464,80 @@
         </div>
         <div class="background-image"></div>
     </section>
-    
+
+    <!-- Section Mission Statement - English -->
+    <section id="raison" class="raison-section language-section" data-lang="en" style="display: none;">
+        <div class="content">
+            <h2>Montyon: an agile vehicle dedicated to highly profitable non-conventional industrial projects</h2>
+            <p>
+                The industry is on the verge of profound transformations, on which many funds are positioning themselves, from seed to LBO. But traditional players are constrained by regulation and their strategy. They therefore focus on "vanilla" deals, leaving aside many segments that are thus little or not financed.<br><br>
+                Thanks to its flexible and agile legal structure, Montyon provides highly value-creating solutions to these issues.
+                <br><br>
+            </p>
+        </div>
+        <div class="background-image"></div>
+    </section>
+
     <div class="section-break"></div>
 
-    <!-- Section Expertise -->
-    <section id="expertise" class="expertise-section">
+   <!-- Section Expertise - Français -->
+   <section id="expertise" class="expertise-section language-section" data-lang="fr">
+    <div class="content">
+        <h2>Notre expertise</h2>
+        <p>
+            Montyon, du nom de l’économiste et philanthrope Antoine de Montyon (1733-1820), est soutenu par Otium Capital (1,6md€ AUM) qui a fait de l’industrie l’un des piliers de sa politique d’investissement au cours des dernières années et investit 150m€ dans ce projet.<br><br>
+            Montyon a 3 spécificités : <br><br>
+            <strong>Flexibilité</strong>
+            <ul>
+                <li>Thèse d’investissement large et outils d’investissements les plus divers (dette, equity, preferred stocks, etc.)</li>
+                <li>Sans contraintes la Société pourra se porter vers des deals délaissés par les fonds</li>
+            </ul>
+            <strong>Contrôle</strong>
+            <ul>
+                <li>Grande simplicité de gestion et un Comité d’Investissement décisionnaire</li>
+                <li>Investissement en majoritaire ou minoritaire avec des clauses protectrices</li>
+            </ul>
+            <strong>Efficacité</strong>
+            <ul>
+                <li>Priorité mise sur la génération de cash flows</li>
+                <li>Sélection des actifs avec visibilité forte sur une liquidité ou capables de générer la rentabilité via les dividendes</li>
+            </ul>
+        </p>
+    </div>
+    <div class="background-image"></div>
+</section>
+
+    <!-- Section Expertise - English -->
+    <section id="expertise" class="expertise-section language-section" data-lang="en" style="display: none;">
         <div class="content">
-            <h2>Notre expertise</h2>
+            <h2>Our Expertise</h2>
             <p>
-                Montyon, du nom de l’économiste et philanthrope Antoine de Montyon (1733-1820), est soutenu par Otium Capital (1,6md€ AUM) qui a fait de l’industrie l’un des piliers de sa politique d’investissement au cours des dernières années et investit 150m€ dans ce projet.<br><br>
-                Montyon a 3 spécificités : <br><br>
-                <strong>Flexibilité</strong>
+                Montyon, named after the economist and philanthropist Antoine de Montyon (1733-1820), is supported by Otium Capital (€1.6bn AUM) which has made industry one of the pillars of its investment policy in recent years and is investing €150m in this project.<br><br>
+                Montyon has 3 specificities: <br><br>
+                <strong>Flexibility</strong>
                 <ul>
-                    <li>Thèse d’investissement large et outils d’investissements les plus divers (dette, equity, preferred stocks, etc.)</li>
-                    <li>Sans contraintes la Société pourra se porter vers des deals délaissés par les fonds</li>
+                    <li>Wide investment thesis and the most diverse investment tools (debt, equity, preferred stocks, etc.)</li>
+                    <li>Without constraints, the Company can target deals neglected by funds</li>
                 </ul>
-                <strong>Contrôle</strong>
+                <strong>Control</strong>
                 <ul>
-                    <li>Grande simplicité de gestion et un Comité d’Investissement décisionnaire</li>
-                    <li>Investissement en majoritaire ou minoritaire avec des clauses protectrices</li>
+                    <li>Great simplicity of management and a decision-making Investment Committee</li>
+                    <li>Investment in majority or minority with protective clauses</li>
                 </ul>
-                <strong>Efficacité</strong>
+                <strong>Efficiency</strong>
                 <ul>
-                    <li>Priorité mise sur la génération de cash flows</li>
-                    <li>Sélection des actifs avec visibilité forte sur une liquidité ou capables de générer la rentabilité via les dividendes</li>
+                    <li>Priority given to cash flow generation</li>
+                    <li>Selection of assets with strong visibility on liquidity or capable of generating profitability through dividends</li>
                 </ul>
             </p>
         </div>
         <div class="background-image"></div>
-    </section> 
-        
+    </section>
+
     <div class="section-break"></div>
 
-    <!-- Section Thèse -->
-    <section id="these" class="these-section">
+    <!-- Section Thèse - Français -->
+    <section id="these" class="these-section language-section" data-lang="fr">
         <div class="content">
             <h2>Thèse</h2>
             <p>
@@ -498,54 +556,108 @@
         </div>
     </section>
 
+    <!-- Section Thesis - English -->
+    <section id="these" class="these-section language-section" data-lang="en" style="display: none;">
+        <div class="content">
+            <h2>Thesis</h2>
+            <p>
+                <strong>Ticket Size:</strong> €10 – 50m<br><br>
+                <strong>Geography:</strong> 70% France – 30% Europe<br><br>
+                <strong>Segments:</strong> Restructuring, LBO, Consolidation, Carve Out, Over-indebtedness <br><br>
+                <strong>Segments neglected by the market targeted by Montyon:</strong>
+                <ul>
+                    <li><em>Undervalued sectors:</em> Sectors perceived by the market as unattractive with a valuation/price decoupling but capable of generating solid cash flows</li>
+                    <li><em>Non-strategic asset disposals by large groups</em></li>
+                    <li><em>Assets in cyclical difficulty, with failing strategies</em></li>
+                    <li><em>Exit of toxic shareholders:</em> opportunities multiplied by geopolitical tensions</li>
+                    <li>Delistings</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+
     <div class="section-break"></div>
 
-    <!-- Section Équipe -->
-    <section id="equipe" class="container mt-5">
+    <!-- Section Équipe - Français -->
+    <section id="equipe" class="container mt-5 language-section" data-lang="fr">
         <h2>Équipe</h2>
         <div class="team-container">
-          <div class="team-member">
-            <img src="Images/PL.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-            <h3>Pascal Lebard</h3>
-            <p>Senior Partner & Co-Founder</p>
-            <a href="https://www.linkedin.com/in/pascal-lebard-84489516/" ><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
-          </div>
-          <div class="team-member">
-            <img src="Images/PM.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-            <h3>Pierre Ménard</h3>
-            <p>Partner & Co-Founder</p>
-            <a href="https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/" ><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
-          </div>
-          <div class="team-member">
-            <img src="Images/ON.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-            <h3>Olivier Nantois</h3>
-            <p>Principal</p>
-            <a href="https://www.linkedin.com/in/olivier-nantois-6448827b/" ><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
-          </div>
-          <div class="team-member">
-            <img src="Images/QH.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-            <h3>Quitterie Humblot</h3>
-            <p>Associate</p>
-            <a href="https://www.linkedin.com/in/quitterie-humblot-6b9236129/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            <div class="team-member">
+                <img src="Images/PL.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+                <h3>Pascal Lebard</h3>
+                <p>Senior Partner & Co-Founder</p>
+                <a href="https://www.linkedin.com/in/pascal-lebard-84489516/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
             </div>
-          <div class="team-member">
-            <img src="Images/ODL.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
-            <h3>Oscar de Laubier</h3>
-            <p>Analyst</p>
-            <a href="https://www.linkedin.com/in/oscar-de-laubier/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
-          </div>
+            <div class="team-member">
+                <img src="Images/PM.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+                <h3>Pierre Ménard</h3>
+                <p>Partner & Co-Founder</p>
+                <a href="https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/ON.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+                <h3>Olivier Nantois</h3>
+                <p>Principal</p>
+                <a href="https://www.linkedin.com/in/olivier-nantois-6448827b/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/QH.jpeg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+                <h3>Quitterie Humblot</h3>
+                <p>Associate</p>
+                <a href="https://www.linkedin.com/in/quitterie-humblot-6b9236129/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/ODL.jpg" alt="Membre de l'équipe" class="img-fluid rounded-circle">
+                <h3>Oscar de Laubier</h3>
+                <p>Analyst</p>
+                <a href="https://www.linkedin.com/in/oscar-de-laubier/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
         </div>
-      </section>
-      
+    </section>
 
-      <div class="section-break"></div>
+    <!-- Section Équipe - English -->
+    <section id="equipe" class="container mt-5 language-section" data-lang="en" style="display: none;">
+        <h2>Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="Images/PL.jpeg" alt="Team member" class="img-fluid rounded-circle">
+                <h3>Pascal Lebard</h3>
+                <p>Senior Partner & Co-Founder</p>
+                <a href="https://www.linkedin.com/in/pascal-lebard-84489516/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/PM.jpeg" alt="Team member" class="img-fluid rounded-circle">
+                <h3>Pierre Ménard</h3>
+                <p>Partner & Co-Founder</p>
+                <a href="https://www.linkedin.com/in/pierre-m%C3%A9nard-3382a948/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/ON.jpeg" alt="Team member" class="img-fluid rounded-circle">
+                <h3>Olivier Nantois</h3>
+                <p>Principal</p>
+                <a href="https://www.linkedin.com/in/olivier-nantois-6448827b/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/QH.jpeg" alt="Team member" class="img-fluid rounded-circle">
+                <h3>Quitterie Humblot</h3>
+                <p>Associate</p>
+                <a href="https://www.linkedin.com/in/quitterie-humblot-6b9236129/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+            <div class="team-member">
+                <img src="Images/ODL.jpg" alt="Team member" class="img-fluid rounded-circle">
+                <h3>Oscar de Laubier</h3>
+                <p>Analyst</p>
+                <a href="https://www.linkedin.com/in/oscar-de-laubier/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Section Portefeuille -->
+    <div class="section-break"></div>
 
-    <section id="portefeuille" class="container mt-5">
+    <!-- Section Portefeuille - Français -->
+    <section id="portefeuille" class="container mt-5 language-section" data-lang="fr">
         <h2>Portefeuille</h2>
         <p>Plusieurs cibles sont actuellement en étude avancée.</p>
-
         <div class="row">
             <div class="col-md-6">
                 <div class="portefeuille-item">
@@ -574,9 +686,54 @@
         </div>
     </section>
 
-        <!-- Section Contact -->
+    <!-- Section Portfolio - English -->
+    <section id="portefeuille" class="container mt-5 language-section" data-lang="en" style="display: none;">
+        <h2>Portfolio</h2>
+        <p>Several targets are currently under advanced study.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="portefeuille-item">
+                    <h3>Company 1</h3>
+                    <p>Sector</p>
+                    <p>Country</p>
+                    <p>Cumulative Revenue</p>
+                    <p>Shareholding</p>
+                    <img src="Images/log.jpeg" alt="Project image" class="portefeuille-image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="portefeuille-item">
+                    <h3>Company 2</h3>
+                    <p>Sector</p>
+                    <p>Country</p>
+                    <p>Cumulative Revenue</p>
+                    <p>Shareholding</p>
+                    <img src="Images/automotive.jpeg" alt="Project image" class="portefeuille-image">
+                </div>
+            </div>
+        </div>
+        <div class="liseres">
+            <div class="liseret1"></div>
+            <div class="liseret2"></div>
+        </div>
+    </section>
 
-    <section id="contact" class="contact-section">
+    <div class="section-break"></div>
+
+    <!-- Section Contact - Français -->
+    <section id="contact" class="contact-section language-section" data-lang="fr">
+        <div class="contact-info">
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:q.humblot@montyon.com" style="color: #ffffff;">contact@montyon.com</a></p>
+            <p>20 avenue Kléber, 75116 Paris</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/montyon-capital/"><img src="Images/linkedin.png" alt="LinkedIn" width="40" height="40"></a>
+        </div>
+    </section>
+
+    <!-- Section Contact - English -->
+    <section id="contact" class="contact-section language-section" data-lang="en" style="display: none;">
         <div class="contact-info">
             <h4>Contact</h4>
             <p>Email: <a href="mailto:q.humblot@montyon.com" style="color: #ffffff;">contact@montyon.com</a></p>
@@ -593,45 +750,76 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Inclusion de JavaScript pour les animations -->
-<!-- Inclusion de JavaScript pour les animations -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Smooth scrolling for navbar links
-        const navbarLinks = document.querySelectorAll('.navbar-nav a');
-
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                window.scrollTo({
-                    top: targetSection.offsetTop - 45, // Adjust for fixed navbar height
-                    behavior: 'smooth'
-                });
+    <script>
+        // Fonction pour changer la langue du contenu
+        function setLanguage(language) {
+            // Masquer toutes les sections de langue
+            document.querySelectorAll('.language-section').forEach(section => {
+                section.style.display = 'none';
             });
-        });
 
-        // Intersection Observer for section animations
-        const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
+            // Afficher les sections de la langue sélectionnée
+            document.querySelectorAll(`.language-section[data-lang="${language}"]`).forEach(section => {
+                section.style.display = 'block';
+            });
 
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            // Mettre à jour les liens de la navbar pour qu'ils pointent vers les sections correctes
+            document.querySelectorAll('.navbar-nav a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const sectionId = href.substring(1).split('-')[0]; // Récupérer l'ID de base de la section
+                    link.setAttribute('href', `#${sectionId}-${language}`);
                 }
             });
-        }, observerOptions);
+        }
 
-        sections.forEach(section => {
-            observer.observe(section);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Définir la langue par défaut sur le français
+            setLanguage('fr');
+
+            // Smooth scrolling pour les liens de la navbar
+            const navbarLinks = document.querySelectorAll('.navbar-nav a');
+
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 45, // Ajuster pour la hauteur de la navbar fixe
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Intersection Observer pour les animations de section
+            const sections = document.querySelectorAll("section:not(.hero-section):not(#contact):not(#equipe):not(#portefeuille)");
+
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Gérer le changement de langue
+            document.getElementById('language-switcher').addEventListener('change', function() {
+                const selectedLang = this.value;
+                setLanguage(selectedLang);
+            });
         });
-    });
-</script>   
+    </script>
+    
 
 </body>
 </html>
